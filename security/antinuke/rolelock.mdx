@@ -1,0 +1,28 @@
+---
+title: "Role locking"
+sidebarTitle: "Role locking"
+description: "Lock specific roles from being modified with Pixel antinuke. Protect staff roles from unauthorized edits, deletes, and permission changes."
+---
+
+Pixel's antinuke role locking module lets you designate roles that cannot be modified by anyone except antinuke admins. Locked roles are protected from edits, deletions, and permission changes, no matter who tries.
+
+## Usage
+
+```text
+,antinuke rolelock add <role>
+,antinuke rolelock remove <role>
+,antinuke rolelock list
+```
+
+## Example
+
+```text
+,antinuke rolelock add @Staff
+,antinuke rolelock add @Administrator
+```
+
+Any attempt to edit or delete the locked roles is reverted and the offender is punished based on your antinuke configuration.
+
+<Warning>
+  Locked roles cannot be changed through the Discord UI either. Unlock the role before making legitimate edits.
+</Warning>

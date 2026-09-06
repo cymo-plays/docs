@@ -1,0 +1,35 @@
+---
+title: "Last.fm Music Tracking with Pixel"
+sidebarTitle: "Last.fm"
+description: "Connect your Last.fm account to Pixel to share now playing tracks, top artists, albums, and compete for server crowns based on listening history."
+---
+
+Pixel integrates with Last.fm so you can share your music activity in Discord and compete with other members for listening crowns.
+
+## Connecting Your Account
+
+Use `,lastfm set <username>` to link your Last.fm profile. Pixel will remember your username for all future commands in that server.
+
+## Music Commands
+
+| Command | What it shows |
+| --- | --- |
+| `,np` | Your currently playing track |
+| `,topartists` | Your top artists over a chosen period |
+| `,topalbums` | Your top albums over a chosen period |
+| `,toptracks` | Your top tracks over a chosen period |
+| `,crowns` | Crown holders in the current server |
+
+## What Is Scrobbling?
+
+Scrobbling is the process of logging tracks you play to Last.fm. To use Pixel's music features, you need an active Last.fm account with scrobbling enabled from your music app, such as Spotify, Apple Music, or a desktop scrobbler. Pixel reads your public Last.fm data, so your listening history must be visible.
+
+## Server Crowns
+
+Crowns are a competitive feature that award the top listener for each artist in your server. When someone in the server has more scrobbles for an artist than anyone else, they hold the crown. If another member surpasses their play count, the crown transfers.
+
+Use `,crowns` to see which members currently hold crowns and how many they have. Crowns update automatically as members scrobble more music.
+
+<Tip>
+Make sure your Last.fm profile is public. Private profiles cannot be queried by Pixel.
+</Tip>

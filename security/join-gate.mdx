@@ -1,0 +1,41 @@
+---
+title: "Screen New Members with Pixel Join Gate"
+sidebarTitle: "Join Gate"
+description: "Configure Pixel's join gate to block or screen new members by account age, assign verification roles, or apply captcha checks automatically."
+---
+
+Pixel's join gate helps you control who enters your server by screening new members the moment they join. You can set minimum account age requirements, assign verification roles, or automatically kick or ban suspicious accounts before they ever post a message.
+
+## How to set up join gate
+
+<Steps>
+  <Step title="Enable the module">
+    Run `,joingate enable` in your server to turn on member screening.
+  </Step>
+  <Step title="Set an account age requirement">
+    Use `,joingate age <days>` to reject accounts younger than the threshold you choose. For example, `,joingate age 7` blocks accounts created within the last week.
+  </Step>
+  <Step title="Choose the action">
+    Decide what Pixel does to members who fail the check: `,joingate action kick|ban|role @role`
+
+    - **kick** or **ban** removes them immediately
+    - **role** assigns a restricted role such as a verification or muted role
+  </Step>
+</Steps>
+
+## Example workflow
+
+1. Set `,joingate age 3`
+2. Set `,joingate action role @Unverified`
+3. New members with accounts older than 3 days pass through normally
+4. Members with newer accounts receive the Unverified role until staff review them
+
+<Tip>
+  Pair join gate with Pixel's anti-raid and anti-nuke features for layered protection. Join gate catches fresh spam accounts at the door, while anti-nuke protects against destructive actions from users already inside.
+</Tip>
+
+## Related articles
+
+- [Anti-Nuke](/security/antinuke)
+- [Auto-Moderation](/security/auto-moderation)
+- [Moderation](/security/moderation)

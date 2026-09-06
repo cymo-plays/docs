@@ -1,0 +1,38 @@
+---
+title: "Support Ticket System"
+sidebarTitle: "Tickets"
+description: "Set up support tickets in your server with Pixel. Create panels, manage topics, claim tickets, and log transcripts for your moderation team."
+---
+
+Pixel's ticket system lets you offer organized support channels for your server members. You can create a ticket panel with multiple topics, assign staff to claims, and keep a full transcript history.
+
+## Setting Up Tickets
+
+<Steps>
+  <Step title="Create the panel">
+    Run `,ticket setup` in the channel where you want the ticket panel to appear. Pixel will post an embed with buttons members can use to open tickets.
+  </Step>
+  <Step title="Add topics">
+    Use `,ticket topic add <name>` to create categories. For example, `,ticket topic add Billing` and `,ticket topic add Technical Support`.
+  </Step>
+  <Step title="Set transcript logging">
+    Run `,ticket transcripts #channel` to specify where closed ticket transcripts should be sent.
+  </Step>
+</Steps>
+
+## Managing Tickets
+
+Once a member opens a ticket, a private channel is created for them and your staff.
+
+| Command | Action |
+| --- | --- |
+| `,ticket claim` | Claim the current ticket so other staff know you are handling it |
+| `,ticket close` | Close the ticket and generate a transcript |
+
+<Warning>
+  Only claim a ticket if you intend to resolve it. Claiming prevents duplicate responses from multiple staff members.
+</Warning>
+
+<Tip>
+  Transcripts include the full message history of the ticket, which is useful for disputes or follow-up reviews.
+</Tip>

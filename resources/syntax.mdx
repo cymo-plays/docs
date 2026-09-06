@@ -1,0 +1,151 @@
+---
+title: "Pixel Embed Syntax & Variables"
+sidebarTitle: "Syntax"
+description: "Pixel's embed scripting language plus every variable available for welcome messages, moderation, tickets, invite tracking, and more."
+---
+
+Pixel uses a lightweight embed scripting language to format welcome messages, reaction triggers, and other configurable bot responses. You write scripts inside command settings or the dashboard, and Pixel replaces the variables below with live data when the message is sent.
+
+## Basic embed script
+
+An embed script is one continuous line. Start with `{embed}` and chain each block with `$v`.
+
+<CodeGroup>
+
+```text Welcome message
+{embed}$v{title: Welcome to {guild.name}}$v{description: Hey {user.mention}, thanks for joining!}$v{color: #3498db}$v{footer: text: Read the rules in #rules}
+```
+
+```text Ticket opened
+{embed}$v{title: Ticket Opened}$v{description: {user.mention} opened a ticket for {topic}.}$v{color: #2ecc71}
+```
+
+</CodeGroup>
+
+## User variables
+
+| Variable | Output |
+| --- | --- |
+| `{user.id}` | Only user's id |
+| `{user.name}` | Only user's name |
+| `{user.nick}` | Only user's nickname |
+| `{user.display}` | Only user's display name |
+| `{user.mention}` | Mentions the user |
+| `{user.discriminator}` | Only user's discriminator |
+| `{user.avatar}` | Only user's avatar |
+| `{user.guild.avatar}` | Only user's guild avatar |
+| `{user.joined_at}` | Joined date in timestamp format |
+| `{user.created_at}` | Creation date in timestamp format |
+
+## Guild variables
+
+| Variable | Output |
+| --- | --- |
+| `{guild.id}` | Only guild id |
+| `{guild.name}` | Only guild name |
+| `{guild.icon}` | Only guild icon |
+| `{guild.created_at}` | Creation date in timestamp format |
+| `{guild.count}` | Only member count |
+| `{guild.count.format}` | Only guild count in ordinal format |
+| `{guild.boost_count}` | Only guild boost amount |
+| `{guild.boost_count.format}` | Only guild boost amount in ordinal format |
+| `{guild.booster_count}` | Amount of people boosting |
+| `{guild.booster_count.format}` | Amount of people boosting in ordinal format |
+| `{guild.boost_tier}` | Only guild's boost level |
+| `{guild.vanity}` | Only guild vanity |
+
+## Last.fm variables
+
+<Tabs>
+  <Tab title="Track">
+    | Variable | Output |
+    | --- | --- |
+    | `{track.name}` | Shows track name |
+    | `{lower(track.name)}` | Shows track name in lowercase |
+    | `{track.url}` | Shows the track Last.fm url |
+    | `{track.image}` | Shows the track image |
+    | `{track.plays}` | Shows the track's plays on your account |
+  </Tab>
+  <Tab title="Artist">
+    | Variable | Output |
+    | --- | --- |
+    | `{artist.name}` | Shows the artist name |
+    | `{lower(artist.name)}` | Shows artist name in lowercase |
+    | `{artist.url}` | Shows the artist Last.fm url |
+    | `{artist.plays}` | Shows the artist plays on your account |
+  </Tab>
+  <Tab title="Album">
+    | Variable | Output |
+    | --- | --- |
+    | `{album.name}` | Shows the album name |
+    | `{lower(album.name)}` | Shows album name in lowercase |
+    | `{album.url}` | Shows the album Last.fm url |
+    | `{album.plays}` | Shows the album plays on your account |
+  </Tab>
+  <Tab title="User">
+    | Variable | Output |
+    | --- | --- |
+    | `{username}` | Shows your Last.fm username |
+    | `{useravatar}` | Shows your Last.fm avatar |
+    | `{scrobbles}` | Shows total number of songs scrobbled on your account |
+    | `{lastfm.color}` | Shows main color of Last.fm logo |
+    | `{lastfm.emoji}` | Shows Last.fm logo emoji |
+  </Tab>
+</Tabs>
+
+## Level variables
+
+| Variable | Output |
+| --- | --- |
+| `{level}` | Shows level you reached |
+| `{target_xp}` | Shows new target xp amount you have to reach |
+
+## Invite tracker variables
+
+| Variable | Output |
+| --- | --- |
+| `{inviter.id}` | Only inviter id |
+| `{inviter.name}` | Only inviter name |
+| `{inviter.display}` | Only inviter display name |
+| `{inviter.mention}` | Mentions the inviter |
+| `{inviter.avatar}` | Only inviter's avatar |
+| `{inviter.regular_count}` | Number of regular invites the inviter has |
+| `{inviter.left_count}` | Number of left invites the inviter has |
+| `{inviter.fake_count}` | Number of fake invites the inviter has |
+| `{inviter.bonus_count}` | Number of bonus invites the inviter has |
+| `{inviter.total_count}` | Total number of invites the inviter has |
+
+## Ticket variables
+
+| Variable | Output |
+| --- | --- |
+| `{user.id}` | Only ticket user id |
+| `{user.name}` | Only ticket user name |
+| `{support.role}` | All ticket support roles |
+| `{topic}` | Name of the ticket topic |
+
+## Punishment variables
+
+Only available for `ban`, `unban`, `kick`, `mute`, `unmute`, `jail`, and `unjail`.
+
+| Variable | Output |
+| --- | --- |
+| `{member.id}` | Shows id of the punished member |
+| `{member.name}` | Shows name of the punished member |
+| `{member.mention}` | Shows mention of the punished member |
+| `{member.discriminator}` | Shows discriminator of the punished member |
+| `{member.avatar}` | Shows avatar of the punished member |
+| `{reason}` | Shows reason of the punishment |
+| `{duration}` | Shows duration for mute/jail |
+| `{appeal.url}` | Shows appeal url of the punishment |
+| `{case.id}` | Shows case id of the punishment |
+
+<Note>
+Not every command supports every variable. If a variable is unsupported in a given context, Pixel leaves it blank.
+</Note>
+
+## Tips
+
+- Use `{color: #hexcode}` to set the embed accent color.
+- You can mix plain text and variables in any field.
+- If you need a literal `{` or `}` in your message, escape it with `\{` and `\}`.

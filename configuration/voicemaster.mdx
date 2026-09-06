@@ -1,0 +1,226 @@
+Give members their own voice channels that appear when they need them and disappear when they leave.
+
+## Overview
+
+VoiceMaster creates a "join to create" lobby. Anyone who joins the lobby gets their own personal voice channel and becomes its owner. When they leave, Pixel deletes the channel. Owners manage their channel with the `,voice` command.
+
+Server setup commands require the **administrator** permission. Owner commands require the member to own the current voice channel.
+
+---
+
+## Setting up the server
+
+### Creating the hub
+
+Run setup once to create the lobby channel and category.
+
+```bash
+,voicemaster setup
+```
+
+Remove the module with `,voicemaster unsetup`.
+
+### Setting the category
+
+Move future temporary channels into a specific category.
+
+<CodeGroup>
+
+```bash Syntax
+,voicemaster category (category)
+```
+
+```bash Example
+,voicemaster category Voice Channels
+```
+
+</CodeGroup>
+
+### Setting a default region, bitrate, and name
+
+Configure the defaults every new channel inherits.
+
+<CodeGroup>
+
+```bash Syntax
+,voicemaster region (region)
+,voicemaster bitrate (bitrate)
+,voicemaster name (name)
+```
+
+```bash Example
+,voicemaster region us-east
+,voicemaster bitrate 64000
+,voicemaster name {user.name}'s VC
+```
+
+</CodeGroup>
+
+### Persisting owner customizations
+
+Save each owner's settings so they apply the next time they create a channel.
+
+<CodeGroup>
+
+```bash Syntax
+,voicemaster savesettings (option)
+```
+
+```bash Example
+,voicemaster savesettings on
+```
+
+</CodeGroup>
+
+### Building a custom interface
+
+Post an embed with buttons for common voice actions.
+
+<CodeGroup>
+
+```bash Syntax
+,interface (channel) (code)
+```
+
+```bash Example
+,interface #voice-hub {embed}{title: Manage your channel}
+```
+
+</CodeGroup>
+
+### Blacklisting words in channel names
+
+Prevent members from using specific words in their channel names. Requires **manage server**.
+
+```bash
+,voicemaster blacklist badword
+,voicemaster unblacklist badword
+,voicemaster blacklisted
+```
+
+---
+
+## Owner controls
+
+Owners run these against their own voice channel.
+
+### Renaming the channel
+
+<CodeGroup>
+
+```bash Syntax
+,voice rename (name)
+```
+
+```bash Example
+,voice rename Gaming Squad
+```
+
+</CodeGroup>
+
+### Setting a user limit
+
+<CodeGroup>
+
+```bash Syntax
+,voice limit (limit)
+```
+
+```bash Example
+,voice limit 5
+```
+
+</CodeGroup>
+
+### Locking, hiding, and revealing
+
+Lock keeps new members out. Hide removes the channel from the sidebar for non-members. Reveal and unlock reverse them.
+
+```bash
+,voice lock
+,voice unlock
+,voice hide
+,voice reveal
+```
+
+### Managing members
+
+Permit and reject specific members from joining, or force-kick someone.
+
+<CodeGroup>
+
+```bash Syntax
+,voice permit (member)
+,voice reject (member)
+,voice kick (member)
+```
+
+```bash Example
+,voice permit @friend
+,voice reject @annoying
+,voice kick @annoying
+```
+
+</CodeGroup>
+
+### Transferring ownership
+
+Hand the channel to another member.
+
+<CodeGroup>
+
+```bash Syntax
+,voice transfer (member)
+```
+
+```bash Example
+,voice transfer @friend
+```
+
+</CodeGroup>
+
+### Claiming an abandoned channel
+
+Claim ownership when the original owner has left.
+
+```bash
+,voice claim
+```
+
+### Setting a status
+
+<CodeGroup>
+
+```bash Syntax
+,voice status (status)
+```
+
+```bash Example
+,voice status Playing ranked
+```
+
+</CodeGroup>
+
+---
+
+## Presets
+
+Save a channel configuration to reuse it later.
+
+<CodeGroup>
+
+```bash Syntax
+,voice preset add (name)
+,voice preset load (name)
+,voice preset autoload (name)
+```
+
+```bash Example
+,voice preset add gaming
+,voice preset load gaming
+,voice preset autoload gaming
+```
+
+</CodeGroup>
+
+Manage the rest with `,voice preset list`, `,voice preset edit (name) (target)`, `,voice preset update (name)`, and `,voice preset delete (name)`.

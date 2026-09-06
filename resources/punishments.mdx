@@ -1,0 +1,66 @@
+---
+title: "Pixel Punishment Types and Appeals"
+sidebarTitle: "Punishments"
+description: "Reference for Pixel punishment types, duration formats, DM variables, and how to set an appeal URL so offenders can contest moderation actions."
+---
+
+Pixel supports a full range of moderation punishments, each with a case ID, optional duration, and a DM sent to the offender. This page covers every punishment type, the commands that trigger it, and the variables you can use in punishment DM templates.
+
+## Punishment types
+
+| Type | Command | Duration required |
+| --- | --- | --- |
+| Warn | `,warn @user <reason>` | No |
+| Mute | `,mute @user <duration> <reason>` | Yes |
+| Jail | `,jail @user <duration> <reason>` | Optional |
+| Kick | `,kick @user <reason>` | No |
+| Softban | `,softban @user <reason>` | No |
+| Ban | `,ban @user [duration] <reason>` | Optional |
+
+## Duration format
+
+Use short suffixes for durations: `s` seconds, `m` minutes, `h` hours, `d` days, `w` weeks.
+
+```text
+,mute @user 30m Spamming in #general
+,ban @user 7d Raid attempt
+,jail @user 1h Repeated warnings
+```
+
+## DM variables
+
+You can customize the DM sent to punished members using variables inside your DM template. Set the template with `,modconfig dm <script>`.
+
+| Variable | Output |
+| --- | --- |
+| `{member.mention}` | Mentions the punished member |
+| `{member.name}` | Punished member's name |
+| `{reason}` | Reason provided by the moderator |
+| `{duration}` | Duration for mute or jail |
+| `{case.id}` | Case ID for the punishment |
+| `{appeal.url}` | Appeal URL (if configured) |
+| `{guild.name}` | Server name |
+
+For the full variable list, see [Syntax](/resources/syntax).
+
+## Appeal URL
+
+Set an appeal URL so punished members know where to contest their case. Pixel injects it into the punishment DM through the `{appeal.url}` variable.
+
+```text
+,appeal set https://forms.example.com/pixel-appeal
+```
+
+<Note>
+  If no appeal URL is set, the `{appeal.url}` variable renders as blank. Configure one before referencing it in your DM template.
+</Note>
+
+<Tip>
+  Include the `{case.id}` variable in your appeal form so members can reference their case number when submitting.
+</Tip>
+
+## Related pages
+
+- [Moderation](/security/moderation) for the full command reference
+- [Auto-Moderation](/security/auto-moderation) to punish rule breaks automatically
+- [Fake Permissions](/security/fake-permissions) to grant moderation access safely

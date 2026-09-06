@@ -1,0 +1,58 @@
+---
+title: "Configure Welcome and Leave Messages"
+sidebarTitle: "Messages"
+description: "Set up welcome, leave, boost, and DM greeting messages in Pixel using custom scripts and embeds to greet members automatically."
+---
+
+Pixel can greet members, say goodbye, celebrate boosts, and send direct messages automatically. This page covers how to set channels and write custom message scripts for each event.
+
+## Set the welcome channel
+
+First, tell Pixel where to post welcome messages:
+
+```text
+,welcome channel #general
+```
+
+Replace `#general` with the channel you want to use.
+
+## Write a welcome script
+
+Welcome scripts support plain text and embeds. Use `{user.mention}` to ping the new member and `{guild.name}` for your server name.
+
+A basic embed welcome message looks like this:
+
+```text
+,welcome message {embed}$v{title:Welcome to {guild.name}}{description:Hey {user.mention}, glad you joined us!}
+```
+
+The `{embed}$v` syntax tells Pixel to render the rest as an embed. You can add fields, colors, and images using the same script format.
+
+## Leave, boost, and DM messages
+
+Configure the other event types with similar commands:
+
+```text
+,leave message Thanks for visiting, {user.mention}.
+,boost message {user.mention} just boosted the server! Thank you!
+```
+
+For DM greetings sent directly to new members:
+
+```text
+,welcome dm true
+,welcome dmmessage Hey {user.mention}, check out #rules when you get a chance.
+```
+
+<Note>
+  Pixel script syntax uses curly braces for variables and embed builders. For a full reference of available variables and formatting options, see [Script syntax](/resources/syntax).
+</Note>
+
+## Quick reference
+
+| Event | Channel command | Message command |
+| --- | --- | --- |
+| Welcome | `,welcome channel #channel` | `,welcome message <script>` |
+| Leave | `,leave channel #channel` | `,leave message <script>` |
+| Boost | `,boost channel #channel` | `,boost message <script>` |
+| DM greeting | `,welcome dm true` | `,welcome dmmessage <script>` |

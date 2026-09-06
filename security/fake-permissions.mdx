@@ -1,0 +1,47 @@
+---
+title: "Use Pixel Fake Permissions for Safe Access"
+sidebarTitle: "Fake Permissions"
+description: "Grant Pixel-only permissions to users and roles without giving real Discord permissions. Manage access with ,fakeperms grant, list, and revoke."
+---
+
+Pixel's fake permissions system lets you give users or roles the ability to run restricted Pixel commands without handing them actual Discord permissions. This is useful when you want moderators to use Pixel's ban or purge commands, for example, but you do not want them to have real Discord administrator or manage messages rights.
+
+## How fake permissions work
+
+Fake permissions apply only inside Pixel. If you grant a role `manage_messages` through fake permissions, members with that role can use Pixel commands that require it, but they still cannot delete messages manually through Discord.
+
+<Note>
+Fake permissions only affect Pixel commands. They do not change Discord roles, channel overwrites, or what a user can do in the native Discord client.
+</Note>
+
+## Managing fake permissions
+
+### Grant a permission
+
+`,fakeperms grant @role manage_messages`
+
+This lets anyone with the tagged role run Pixel commands that need `manage_messages`.
+
+### List current grants
+
+`,fakeperms list`
+
+Shows every role and user with fake permissions and which permissions they hold.
+
+### Revoke a permission
+
+`,fakeperms revoke @role <perm>`
+
+Removes the specified fake permission from the role or user.
+
+## Common use cases
+
+- Let trial moderators use `,warn` and `,mute` without full mod rights
+- Allow event staff to run `,giveaway` commands without manage server
+- Give trusted members access to `,purge` while keeping native permissions locked down
+
+## Related articles
+
+- [Moderation](/security/moderation)
+- [Auto-Moderation](/security/auto-moderation)
+- [Resources: Permissions](/resources/permissions)

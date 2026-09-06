@@ -1,0 +1,50 @@
+---
+title: "Manage Roles with Pixel"
+sidebarTitle: "Roles"
+description: "Set up reaction roles, button roles, and auto-roles in Pixel so members get the right permissions automatically when they join or interact."
+---
+
+Pixel gives you three ways to assign roles automatically or on demand: auto-roles for new joins, reaction roles for emoji clicks, and button roles for clean UI interactions. This page shows how to configure each one.
+
+## Auto-role on join
+
+Auto-roles assign one or more roles to every new member the moment they join your server. This is useful for default color roles, read-access roles, or basic tier permissions.
+
+Use `,autorole add @role` to add a role to the auto-role list. Repeat the command for additional roles. Members will receive all listed roles automatically when they join.
+
+## Reaction roles vs button roles
+
+Both reaction roles and button roles let members self-assign roles, but they use different Discord UI elements. Choose the style that fits your server layout.
+
+<Tabs>
+  <Tab title="Reaction roles">
+    Reaction roles use emoji reactions under a message. Members click an emoji to receive the linked role.
+
+    Create one with:
+
+    ```text
+    ,reactionrole create
+    ```
+
+    Pixel will walk you through selecting the channel, message, emoji, and target role. You can add multiple emoji-to-role mappings to the same message.
+  </Tab>
+  <Tab title="Button roles">
+    Button roles use Discord button components attached to a message. They look cleaner and do not require scrolling through emoji lists.
+
+    Create one with:
+
+    ```text
+    ,buttonrole create
+    ```
+
+    Pixel will prompt you for the channel, message text, button label, and role. You can add multiple buttons to a single message for a compact role picker.
+  </Tab>
+</Tabs>
+
+## Managing existing setups
+
+To remove a reaction or button mapping, use the respective remove commands. You can also list all active reaction roles or button roles to audit which roles are currently self-assignable.
+
+<Tip>
+  Keep self-assignable roles below any moderator or admin roles in your server role list. Discord checks role hierarchy before allowing Pixel to grant roles.
+</Tip>

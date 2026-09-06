@@ -1,0 +1,34 @@
+---
+title: "Ban"
+sidebarTitle: "Ban"
+description: "Catch mass ban attacks with Pixel antinuke. Set a per-user ban threshold and choose the punishment applied when a moderator crosses it."
+---
+
+Pixel's antinuke ban module tracks moderators issuing bans faster than a legitimate workflow would produce. Mass bans are the most destructive raid tactic because banned members cannot rejoin without a manual unban.
+
+## Usage
+
+```text
+,antinuke ban enable <threshold> <punishment>
+,antinuke ban disable
+,antinuke ban settings
+```
+
+## Parameters
+
+| Name | Description |
+| --- | --- |
+| `threshold` | Number of bans allowed before triggering |
+| `punishment` | Action applied to the offender (see [Punishments](/resources/punishments)) |
+
+## Example
+
+```text
+,antinuke ban enable 3 kick
+```
+
+After 3 bans, the offender is kicked from the server, halting further ban activity.
+
+<Warning>
+  Even trusted moderators should stay near this threshold. Legitimate moderation rarely involves banning many members in a short burst.
+</Warning>

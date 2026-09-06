@@ -1,0 +1,245 @@
+Reward members for chatting and hanging out in voice.
+
+## Overview
+
+Pixel tracks messages and voice time, awards XP, and posts a level-up message when a member ranks up. You can grant roles at specific levels, boost XP for certain roles or boosters, and ignore channels or members you don't want to count.
+
+Setup and admin commands require the **manage server** permission.
+
+---
+
+## Configuring leveling
+
+### Enabling leveling
+
+Turn the module on for your server.
+
+```bash
+,level enable
+```
+
+Disable it with `,level disable`.
+
+### Setting the level-up channel
+
+Choose where level-up announcements are posted.
+
+<CodeGroup>
+
+```bash Syntax
+,level channel (channel)
+```
+
+```bash Example
+,level channel #level-ups
+```
+
+</CodeGroup>
+
+### Customizing the level-up message
+
+The message supports embed script and variables like `{user.mention}` and `{level}`.
+
+<CodeGroup>
+
+```bash Syntax
+,level message (message)
+```
+
+```bash Example
+,level message GG {user.mention}, you reached level {level}!
+```
+
+</CodeGroup>
+
+Preview with `,level test` and review the full configuration with `,level config`.
+
+---
+
+## User commands
+
+### Checking a rank
+
+Anyone can look up their own rank card or someone else's.
+
+<CodeGroup>
+
+```bash Syntax
+,rank (member)
+```
+
+```bash Example
+,rank @jonathan
+```
+
+</CodeGroup>
+
+### Viewing the leaderboard
+
+Show the top XP earners in the server.
+
+```bash
+,level leaderboard
+```
+
+---
+
+## Role rewards
+
+### Adding a role reward
+
+Grant a role automatically when a member hits a level.
+
+<CodeGroup>
+
+```bash Syntax
+,level rewards add (level) (role)
+```
+
+```bash Example
+,level rewards add 10 @Veteran
+```
+
+</CodeGroup>
+
+### Choosing whether rewards stack
+
+Decide if members keep previous reward roles when they earn a new one.
+
+<CodeGroup>
+
+```bash Syntax
+,level rewards stack (option)
+```
+
+```bash Example
+,level rewards stack on
+```
+
+</CodeGroup>
+
+### Syncing existing members
+
+Retroactively assign role rewards to members who already qualify.
+
+```bash
+,level rewards sync
+```
+
+Manage the rest with `,level rewards remove (role)`, `,level rewards list`, and `,level rewards reset`.
+
+---
+
+## Multipliers
+
+### Boosting XP globally
+
+Multiply text XP for everyone.
+
+<CodeGroup>
+
+```bash Syntax
+,level multiplier (multiplier)
+```
+
+```bash Example
+,level multiplier 2
+```
+
+</CodeGroup>
+
+### Boosting XP for boosters
+
+Reward server boosters with extra XP.
+
+<CodeGroup>
+
+```bash Syntax
+,level booster (multiplier)
+```
+
+```bash Example
+,level booster 1.5
+```
+
+</CodeGroup>
+
+### Boosting XP for a role
+
+Grant extra XP to members of a specific role.
+
+<CodeGroup>
+
+```bash Syntax
+,level rolemultiplier add (role) (multiplier)
+```
+
+```bash Example
+,level rolemultiplier add @VIP 3
+```
+
+</CodeGroup>
+
+Remove with `,level rolemultiplier remove (role)` and inspect every multiplier with `,level multipliers`.
+
+### Voice XP multipliers
+
+The same three commands apply to voice XP under `,level voice`.
+
+```bash
+,level voice multiplier 2
+,level voice booster 1.5
+,level voice rolemultiplier add @VIP 3
+```
+
+---
+
+## Ignore rules
+
+Exclude channels, roles, or members from earning XP.
+
+<CodeGroup>
+
+```bash Syntax
+,level ignore add (target)
+```
+
+```bash Example
+,level ignore add #bots
+```
+
+</CodeGroup>
+
+Toggle whether Pixel commands count toward XP with `,level ignore command (option)`, remove entries with `,level ignore remove (target)`, and inspect with `,level ignore list`.
+
+---
+
+## Admin overrides
+
+### Setting a member's level
+
+<CodeGroup>
+
+```bash Syntax
+,level set (member) (level)
+```
+
+```bash Example
+,level set @jonathan 15
+```
+
+</CodeGroup>
+
+### Resetting a member
+
+<CodeGroup>
+
+```bash Syntax
+,level reset (member)
+```
+
+```bash Example
+,level reset @jonathan
+```
+
+</CodeGroup>

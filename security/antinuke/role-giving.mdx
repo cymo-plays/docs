@@ -1,0 +1,33 @@
+---
+title: "Role giving"
+sidebarTitle: "Role giving"
+description: "Prevent unauthorized permission escalation with Pixel antinuke. Punish members who hand out dangerous roles to themselves or others."
+---
+
+Pixel's antinuke role giving module blocks members from assigning dangerous roles without authorization. This stops the classic escalation pattern where a rogue moderator gives themselves an Administrator role and starts wrecking the server.
+
+## Usage
+
+```text
+,antinuke giverole enable <punishment>
+,antinuke giverole disable
+,antinuke giverole settings
+```
+
+## Parameters
+
+| Name | Description |
+| --- | --- |
+| `punishment` | Action applied when a dangerous role is assigned (see [Punishments](/resources/punishments)) |
+
+## Example
+
+```text
+,antinuke giverole enable strip
+```
+
+Any unauthorized dangerous role assignment strips the offender's permissions immediately.
+
+<Tip>
+  Mark your Administrator and Manage Server roles as dangerous so this module always fires on them.
+</Tip>

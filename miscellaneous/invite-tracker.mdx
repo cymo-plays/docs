@@ -1,0 +1,33 @@
+---
+title: "Track Server Invites"
+sidebarTitle: "Invite Tracker"
+description: "Track who invited whom in your server with Pixel. View invite stats, leaderboards, bonus invites, and breakdowns of fake, left, regular, and bonus counts."
+---
+
+Pixel's invite tracker records which members invited new users to your server. This is useful for reward systems, verification, or simply understanding where your growth comes from.
+
+## Viewing Invite Stats
+
+Use `,invites @user` to see a breakdown of any member's invites. The stats include four categories:
+
+- **Regular:** Users who joined and are still in the server.
+- **Left:** Users who joined but have since left.
+- **Fake:** Users who were flagged as alt accounts or duplicates.
+- **Bonus:** Extra invites manually added by staff.
+
+## Leaderboards and Management
+
+| Command | Action |
+| --- | --- |
+| `,invites @user` | View invite stats for a specific member |
+| `,invites leaderboard` | Show the top inviters in the server |
+| `,invites reset @user` | Reset a member's invite count to zero |
+| `,invites bonus @user <amount>` | Add bonus invites to a member |
+
+<Warning>
+  Resetting invites cannot be undone. Make sure you want to clear the data before running `,invites reset`.
+</Warning>
+
+<Tip>
+  Use bonus invites to reward members for events or contests without requiring them to generate actual invite links.
+</Tip>

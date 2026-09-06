@@ -1,0 +1,37 @@
+---
+title: "Pixel Moderation Commands and Case System"
+sidebarTitle: "Moderation"
+description: "Use Pixel's moderation commands to ban, kick, mute, jail, warn, and purge. Track every action with case IDs and mod logs."
+---
+
+Pixel gives you a full moderation toolkit to manage rule-breaking members, clean up channels, and keep a record of every staff action. All moderation commands generate case IDs so you can review or reference punishments later.
+
+## Core moderation commands
+
+| Command | Description |
+| --- | --- |
+| `,ban @user [reason]` | Permanently bans a member from the server |
+| `,kick @user [reason]` | Removes a member from the server |
+| `,mute @user <duration> [reason]` | Applies a timeout or mute role for the given duration |
+| `,jail @user [reason]` | Moves a member to a designated jail channel and restricts access |
+| `,warn @user [reason]` | Issues a formal warning recorded in the user's history |
+| `,purge <amount>` | Deletes the specified number of recent messages in the channel |
+| `,history @user` | Shows all past cases for the target user |
+
+## Case system and logging
+
+Every moderation action creates a numbered case. To look up a specific case, run:
+
+`,case <id>`
+
+This shows the moderator, target user, reason, timestamp, and action type. To send all moderation events to a dedicated channel, set your mod log channel with:
+
+`,modlogs set #channel`
+
+After that, Pixel will post a log entry for every ban, kick, mute, warn, and jail action automatically.
+
+## Related articles
+
+- [Auto-Moderation](/security/auto-moderation)
+- [Anti-Nuke](/security/antinuke)
+- [Punishments](/resources/punishments)

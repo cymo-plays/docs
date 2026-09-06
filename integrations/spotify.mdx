@@ -1,0 +1,119 @@
+Control your Spotify session from Discord.
+
+## Overview
+
+Pixel connects to your Spotify account through OAuth. Playback control requires Spotify Premium; anyone can see what someone else is listening to.
+
+---
+
+## Linking your account
+
+### Logging in
+
+Start the OAuth flow to link your Spotify account.
+
+```bash
+,spotify login
+```
+
+Disconnect with `,spotify logout`.
+
+### Viewing linked account info
+
+Look up your own or another member's connected Spotify account.
+
+<CodeGroup>
+
+```bash Syntax
+,spotify info (user)
+```
+
+```bash Example
+,spotify info @jonathan
+```
+
+</CodeGroup>
+
+---
+
+## Controlling playback
+
+### Playing a track
+
+Search for and start a track on your active Spotify device.
+
+<CodeGroup>
+
+```bash Syntax
+,spotify play (track)
+```
+
+```bash Example
+,spotify play never gonna give you up
+```
+
+</CodeGroup>
+
+### Pausing, resuming, and skipping
+
+Standard playback controls.
+
+```bash
+,spotify pause
+,spotify resume
+,spotify skip
+,spotify back
+,spotify current
+```
+
+### Setting the volume
+
+Set the playback volume on your active device.
+
+<CodeGroup>
+
+```bash Syntax
+,spotify volume (volume)
+```
+
+```bash Example
+,spotify volume 50
+```
+
+</CodeGroup>
+
+---
+
+## Devices and playlists
+
+### Switching devices
+
+Show your available Spotify devices and pick one for playback.
+
+```bash
+,spotify devices
+```
+
+### Browsing playlists
+
+List every playlist saved to your account.
+
+```bash
+,spotify playlists
+```
+
+### Playing a playlist
+
+Play a specific playlist by name.
+
+<CodeGroup>
+
+```bash Syntax
+,spotify playlist (name)
+```
+
+```bash Example
+,spotify playlist Daily Mix 1
+```
+
+</CodeGroup>

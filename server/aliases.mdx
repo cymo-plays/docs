@@ -1,0 +1,47 @@
+---
+title: "Create Command Aliases"
+sidebarTitle: "Aliases"
+description: "Set up Pixel command aliases to create shortcuts for frequently used commands, saving time for moderators and admins."
+---
+
+Pixel command aliases let you define shorter or easier-to-remember shortcuts for existing commands. Instead of typing the full command every time, you can create an alias and use it just like the original. This page covers how to add, remove, and list aliases.
+
+## Add an alias
+
+Create a shortcut that runs another command when used:
+
+```text
+,alias add b ban
+```
+
+With this alias, typing `,b @user reason` will run the same action as `,ban @user reason`.
+
+Aliases can point to any Pixel command, including commands with sub-arguments. Make sure the alias name does not conflict with an existing command.
+
+## List aliases
+
+View all aliases configured for your server:
+
+```text
+,alias list
+```
+
+The list shows each alias name and the full command it maps to.
+
+## Remove an alias
+
+Delete an alias you no longer need:
+
+```text
+,alias remove b
+```
+
+Removing an alias does not affect the original command. Members can still use the full command name.
+
+<Tip>
+  Create aliases for your most common moderation actions, such as `,k` for `,kick` or `,m` for `,mute`, to speed up response times.
+</Tip>
+
+<Note>
+  Aliases are server-specific. Each alias you create only works in the server where it was added.
+</Note>

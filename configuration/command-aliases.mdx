@@ -1,0 +1,93 @@
+Shorten commands with aliases and pick the prefix that Pixel responds to.
+
+## Overview
+
+Server aliases and prefix changes require the **manage server** permission. Self-aliases and self-prefixes require a **donator** role and follow you across every server Pixel is in.
+
+---
+
+## Server aliases
+
+### Creating an alias
+
+Map a shortcut to a full command with pre-filled arguments.
+
+<CodeGroup>
+
+```bash Syntax
+,alias add (alias) (command) (args)
+```
+
+```bash Example
+,alias add rules say #rules Read the rules!
+```
+
+</CodeGroup>
+
+Manage the rest with `,alias list` and `,alias remove (alias)`.
+
+---
+
+## Personal aliases (donator)
+
+Donators can create shortcuts that only trigger for them.
+
+<CodeGroup>
+
+```bash Syntax
+,selfalias add (alias) (command) (args)
+```
+
+```bash Example
+,selfalias add hi say Hello!
+```
+
+</CodeGroup>
+
+Manage the rest with `,selfalias list` and `,selfalias remove (alias)`.
+
+---
+
+## Server prefix
+
+### Setting the prefix
+
+Change the prefix used by every member in your server. The default is `,`.
+
+<CodeGroup>
+
+```bash Syntax
+,prefix set (prefix)
+```
+
+```bash Example
+,prefix set !
+```
+
+</CodeGroup>
+
+Revert to the default with `,prefix remove`. See how many servers use each prefix with `,prefix leaderboard`.
+
+---
+
+## Personal prefix (donator)
+
+Donators can set a prefix that only responds to them, across every server.
+
+<CodeGroup>
+
+```bash Syntax
+,selfprefix set (prefix)
+```
+
+```bash Example
+,selfprefix set $
+```
+
+</CodeGroup>
+
+Manage the rest with `,selfprefix remove` and `,selfprefix leaderboard`.
+
+<Tip>
+  If you forget the current prefix, mention Pixel with `@Pixel prefix` to check.
+</Tip>

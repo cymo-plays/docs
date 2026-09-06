@@ -1,0 +1,70 @@
+---
+title: "Social Media Notifications in Pixel"
+sidebarTitle: "Social Notifications"
+description: "Set up Pixel to automatically post notifications when creators upload to YouTube, go live on Twitch, post on Twitter, or publish on TikTok."
+---
+
+Pixel can monitor creators across social platforms and post updates directly into a Discord channel you choose. This keeps your community informed without manual checks.
+
+## Managing Subscriptions
+
+Use the `,socials` command group to add, list, and remove notifications.
+
+| Command | Purpose |
+| --- | --- |
+| `,socials add <platform> <creator> #channel` | Subscribe a channel to a creator |
+| `,socials list` | View all active subscriptions in the server |
+| `,socials remove <id>` | Remove a subscription by its ID |
+
+## Platform Setup
+
+<Tabs>
+  <Tab title="YouTube">
+    Subscribe to a YouTube channel to get a Discord message when a new video is published.
+
+    ```text
+    ,socials add youtube <channel-id-or-handle> #announcements
+    ```
+
+    Use the channel ID or handle, not the full URL. Pixel checks periodically and posts the video title and link.
+  </Tab>
+  <Tab title="Twitch">
+    Get notified when a Twitch user goes live or changes stream title.
+
+    ```text
+    ,socials add twitch <username> #live-notifs
+    ```
+
+    Pixel sends a message with the stream title, category, and a direct link to watch.
+  </Tab>
+  <Tab title="Twitter / X">
+    Receive a Discord message when an account posts a new tweet.
+
+    ```text
+    ,socials add twitter <username> #social-feed
+    ```
+
+    Pixel includes the tweet text and a link to the post.
+  </Tab>
+  <Tab title="TikTok">
+    Be alerted when a TikTok creator publishes a new video.
+
+    ```text
+    ,socials add tiktok <username> #videos
+    ```
+
+    Pixel posts the video caption and link to your chosen channel.
+  </Tab>
+</Tabs>
+
+## Removing Subscriptions
+
+Run `,socials list` to see every subscription with its ID. Then remove one with:
+
+```text
+,socials remove <id>
+```
+
+<Note>
+  You can set up multiple subscriptions per platform. Each one needs its own `,socials add` command.
+</Note>

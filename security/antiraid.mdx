@@ -1,0 +1,150 @@
+Block coordinated raids and low-effort spam accounts before they can post.
+
+## Overview
+
+### Why use antiraid?
+
+Raids usually arrive as a flood of freshly created accounts joining together, often still using Discord's default avatar. Antiraid punishes those accounts automatically so your moderators are not overwhelmed.
+
+### How does antiraid work?
+
+Each antiraid module watches a specific pattern: mass joins, account age, or default avatars. When the pattern is detected, Pixel applies the configured punishment.
+
+All antiraid commands require the **administrator** permission.
+
+---
+
+## Configuring antiraid
+
+### Enabling antiraid on your server
+
+Run the initial setup once. It creates the required configuration entry so modules can be enabled.
+
+```bash
+,antiraid setup
+```
+
+### Setting the logs channel
+
+Send every antiraid event to a dedicated channel so you can audit later.
+
+<CodeGroup>
+
+```bash Syntax
+,antiraid logs (channel)
+```
+
+```bash Example
+,antiraid logs #antiraid-logs
+```
+
+</CodeGroup>
+
+### Whitelisting an expected joiner
+
+Create a one-time bypass for a user you know is about to join.
+
+<CodeGroup>
+
+```bash Syntax
+,antiraid whitelist (user)
+```
+
+```bash Example
+,antiraid whitelist @jonathan
+```
+
+</CodeGroup>
+
+---
+
+## Available modules
+
+### Mass join protection
+
+Trigger a punishment when too many members join in a short window.
+
+<CodeGroup>
+
+```bash Syntax
+,antiraid massjoin enable (punishment) (threshold)
+```
+
+```bash Example
+,antiraid massjoin enable ban 5
+```
+
+</CodeGroup>
+
+You can also change the threshold or punishment later without disabling the module.
+
+```bash
+,antiraid massjoin threshold 10
+,antiraid massjoin punishment kick
+```
+
+### New account protection
+
+Punish accounts younger than the configured age when they join.
+
+<CodeGroup>
+
+```bash Syntax
+,antiraid age enable (time) (punishment)
+```
+
+```bash Example
+,antiraid age enable 7d ban
+```
+
+</CodeGroup>
+
+### Default avatar protection
+
+Punish accounts still using Discord's default avatar.
+
+<CodeGroup>
+
+```bash Syntax
+,antiraid avatar enable (punishment)
+```
+
+```bash Example
+,antiraid avatar enable kick
+```
+
+</CodeGroup>
+
+---
+
+## Disabling an antiraid module
+
+Every module has a matching `disable` subcommand.
+
+<CodeGroup>
+
+```bash Syntax
+,antiraid (module) disable
+```
+
+```bash Example
+,antiraid massjoin disable
+```
+
+</CodeGroup>
+
+---
+
+## Viewing the antiraid configuration
+
+Use `antiraid config` to see enabled modules and their settings.
+
+```bash
+,antiraid config
+```
+
+Use `antiraid whitelisted` to see every active whitelist entry.
+
+```bash
+,antiraid whitelisted
+```

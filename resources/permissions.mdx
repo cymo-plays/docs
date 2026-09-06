@@ -1,0 +1,55 @@
+---
+title: "Pixel Permission Reference"
+sidebarTitle: "Permissions"
+description: "Reference for Pixel command permissions you can grant to roles and users through fake permissions without exposing real Discord admin rights."
+---
+
+Pixel uses its own permission system so you can let moderators run restricted commands without giving them real Discord permissions. This page lists every Pixel permission you can grant via [fake permissions](/security/fake-permissions) and what each one unlocks.
+
+## Permission list
+
+| Permission | Unlocks |
+| --- | --- |
+| `manage_messages` | Purge, snipe, and message cleanup commands |
+| `kick_members` | Kick command and warn-to-kick escalations |
+| `ban_members` | Ban, unban, softban, and hackban commands |
+| `moderate_members` | Mute, unmute, jail, and unjail commands |
+| `manage_roles` | Reaction roles, button roles, and auto-role setup |
+| `manage_channels` | Channel lock, unlock, hide, and slowmode |
+| `manage_guild` | Welcome, leave, boost, and starboard configuration |
+| `manage_nicknames` | Nickname enforcement and force-nick commands |
+| `view_audit_log` | Logging configuration and log queries |
+| `manage_webhooks` | Webhook create, send, edit, and delete |
+| `manage_emojis` | Emoji upload, rename, and steal commands |
+
+## How to grant a permission
+
+Use `,fakeperms grant` with a role or member and the permission name:
+
+```text
+,fakeperms grant @Moderator ban_members
+,fakeperms grant @Trainee manage_messages
+```
+
+Run `,fakeperms list` to see everything currently granted, and `,fakeperms revoke @role <permission>` to remove access.
+
+<Note>
+  Fake permissions only affect Pixel commands. They do not give the user real Discord permissions or access to other bots.
+</Note>
+
+<Warning>
+  Grant `ban_members` and `manage_guild` sparingly. Members with these permissions can take actions that are hard to reverse.
+</Warning>
+
+## Command tiers
+
+Every Pixel command falls into one of these access tiers:
+
+| Tier | Who can run it |
+| --- | --- |
+| Everyone | Any server member |
+| Moderator | Members with a matching fake permission or Discord permission |
+| Manager | Members with `manage_guild` or Discord Manage Server |
+| Owner | Server owner only |
+
+See [Fake Permissions](/security/fake-permissions) for the full setup walkthrough.

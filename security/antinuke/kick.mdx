@@ -1,0 +1,34 @@
+---
+title: "Kick"
+sidebarTitle: "Kick"
+description: "Detect mass kick attacks with Pixel antinuke. Set a per-user kick threshold and choose the punishment applied when a moderator crosses it."
+---
+
+Pixel's antinuke kick module watches for moderators kicking too many members in a short period. Mass kicks are a common raid tactic to empty a server or force members to rejoin through a malicious invite.
+
+## Usage
+
+```text
+,antinuke kick enable <threshold> <punishment>
+,antinuke kick disable
+,antinuke kick settings
+```
+
+## Parameters
+
+| Name | Description |
+| --- | --- |
+| `threshold` | Number of kicks allowed before triggering |
+| `punishment` | Action applied to the offender (see [Punishments](/resources/punishments)) |
+
+## Example
+
+```text
+,antinuke kick enable 3 kick
+```
+
+After 3 kicks, the offender is kicked out of the server themselves.
+
+<Tip>
+  Whitelist your active moderators if they legitimately need to kick more than 3 members in a burst.
+</Tip>

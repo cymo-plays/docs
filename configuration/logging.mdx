@@ -1,0 +1,87 @@
+Record everything that happens in your server into organized log channels.
+
+## Overview
+
+Pixel groups events into seven categories. You can set up all of them at once with `,logs setup`, or add each category to its own channel. You can also exclude users, roles, or channels you don't want in your logs.
+
+Manual setup commands require the **manage server** permission. `,logs setup` requires the **Setup logging channels** permission.
+
+---
+
+## Setting up logging
+
+### Setting up all categories at once
+
+Create a full logging category and channels with one command.
+
+```bash
+,logs setup
+```
+
+### Adding a single category
+
+Add one event category to a specific channel.
+
+<CodeGroup>
+
+```bash Syntax
+,logs add (type) (channel)
+```
+
+```bash Example
+,logs add moderation #mod-log
+```
+
+</CodeGroup>
+
+Valid event types are `guild`, `channels`, `members`, `voice`, `roles`, `moderation`, and `messages`.
+
+### Removing a single category
+
+Stop logging a specific event type.
+
+<CodeGroup>
+
+```bash Syntax
+,logs remove (type)
+```
+
+```bash Example
+,logs remove voice
+```
+
+</CodeGroup>
+
+---
+
+## Ignoring targets
+
+Exclude a user, role, or channel from being logged.
+
+<CodeGroup>
+
+```bash Syntax
+,logs ignore add (target)
+```
+
+```bash Example
+,logs ignore add @BotRole
+```
+
+</CodeGroup>
+
+Remove an entry with `,logs ignore remove (target)` and inspect with `,logs ignore list`.
+
+---
+
+## Viewing configured logs
+
+List every category and its channel.
+
+```bash
+,logs list
+```
+
+<Tip>
+  Add bot roles and spam channels to the ignore list so your logs stay readable during high-traffic periods.
+</Tip>

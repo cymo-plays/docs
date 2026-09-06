@@ -1,0 +1,98 @@
+---
+title: "Antinuke"
+sidebarTitle: "Antinuke"
+description: "Set up Pixel's antinuke to catch mass bans, kicks, channel and role changes. Configure per-user thresholds, whitelists, admins, and log channels."
+---
+
+Pixel's antinuke module locks down destructive actions before a compromised or rogue moderator can wreck your server. This page covers how to enable antinuke, tune its thresholds and punishments, whitelist trusted staff, and review incidents in a log channel.
+
+## Information
+
+To start using antinuke, run `,antinuke setup` once. This creates the base configuration so individual modules can be enabled.
+
+Antinuke is triggered by a threshold set **per user**. When a member performs a watched action more times than the threshold within Pixel's tracking window, the configured punishment fires.
+
+Your antinuke threshold should **never** be higher than 5. High thresholds delay detection and let attackers cause more damage before Pixel steps in. A value between 1 and 5 works best for almost every server.
+
+## Parameters
+
+| Name | Description |
+| --- | --- |
+| `threshold` | How many times an action can occur before antinuke triggers |
+| `punishment` | Action Pixel takes on the offender when triggered |
+| `time` | Minimum account age required for the actor |
+
+Not every subcommand accepts every parameter. Check the individual module page for the parameters it supports.
+
+## Punishments
+
+For the full list of punishments antinuke can apply, see [Punishments](/resources/punishments).
+
+## Admins & whitelisted
+
+Whitelist a member from triggering antinuke with `,antinuke whitelist [user]`. Whitelisted members can perform watched actions without being punished.
+
+Grant antinuke admin status with `,antinuke admin [user]`. Antinuke admins can modify antinuke settings. Only give this to people you fully trust.
+
+<Warning>
+  Be careful who you whitelist. A whitelisted member can nuke your server without antinuke stopping them.
+</Warning>
+
+## Antinuke logs
+
+Set a log channel with `,antinuke logs [channel]`. Every antinuke trigger sends a report to that channel, including the actor, the module that fired, and the punishment applied. Setting this up is strongly recommended so you always have a record of what happened.
+
+## Recommended configuration
+
+If you are not sure how to configure antinuke, this is a solid starting point.
+
+```text
+// Role config
+,antinuke rolecreate enable 3 strip
+,antinuke roledelete enable 1 strip
+,antinuke editrole enable ban
+,antinuke giverole enable strip
+
+// Channel config
+,antinuke channelcreate enable 3 strip
+,antinuke channeldelete enable 1 strip
+
+// Role moderation
+,antinuke kick enable 3 kick
+,antinuke ban enable 3 kick
+,antinuke botadd enable strip
+```
+
+## Modules
+
+<CardGroup cols={2}>
+  <Card title="Role creation" icon="plus" href="/security/antinuke/rolecreate">
+  </Card>
+
+  <Card title="Role deletion" icon="trash" href="/security/antinuke/roledelete">
+  </Card>
+
+  <Card title="Role editing" icon="pen" href="/security/antinuke/editrole">
+  </Card>
+
+  <Card title="Role giving" icon="user-plus" href="/security/antinuke/role-giving">
+  </Card>
+
+  <Card title="Role locking" icon="lock" href="/security/antinuke/rolelock">
+  </Card>
+
+  <Card title="Channel creation" icon="folder-plus" href="/security/antinuke/channelcreate">
+  </Card>
+
+  <Card title="Channel deletion" icon="folder-minus" href="/security/antinuke/channeldelete">
+  </Card>
+
+  <Card title="Kick" icon="user-slash" href="/security/antinuke/kick">
+  </Card>
+
+  <Card title="Ban" icon="gavel" href="/security/antinuke/ban">
+  </Card>
+
+  <Card title="Bot adding" icon="robot" href="/security/antinuke/botadd">
+  </Card>
+</CardGroup>

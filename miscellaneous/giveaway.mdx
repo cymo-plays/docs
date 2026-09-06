@@ -1,0 +1,42 @@
+---
+title: "Create and Manage Giveaways"
+sidebarTitle: "Giveaway"
+description: "Run giveaways in your Discord server with Pixel. Set duration, winners, prize, and optional entry requirements like roles or invite counts."
+---
+
+Pixel's giveaway system lets you run timed prize draws with flexible entry rules. You can require specific roles, minimum levels, or invite counts to limit who can participate.
+
+## Creating a Giveaway
+
+Run `,gcreate <duration> <winners> <prize>` to start a new giveaway. Duration accepts formats like `1h`, `30m`, or `1d`.
+
+Example:
+
+```text
+,gcreate 24h 1 Nitro Classic
+```
+
+This creates a giveaway that lasts 24 hours with one winner and the prize "Nitro Classic."
+
+## Optional Requirements
+
+When setting up a giveaway, you can add restrictions:
+
+- **Role requirement:** Only users with a specified role can enter.
+- **Minimum level:** Requires a certain leveling rank from Pixel's leveling system.
+- **Invite count:** Requires a minimum number of tracked invites.
+
+## Managing Giveaways
+
+| Command | Action |
+| --- | --- |
+| `,gend <id>` | End a giveaway early and pick winners |
+| `,greroll <id>` | Reroll a new winner for a finished giveaway |
+
+<Note>
+  Giveaway IDs are shown in the giveaway embed when it is created. Use that ID to end or reroll the giveaway later.
+</Note>
+
+<Tip>
+  Use role requirements to create member-only or booster-exclusive giveaways as a reward for active community members.
+</Tip>

@@ -1,0 +1,34 @@
+---
+title: "Channel deletion"
+sidebarTitle: "Channel deletion"
+description: "Stop mass channel deletions with Pixel antinuke. Set a low threshold and pick a punishment so a single wipe attempt is caught immediately."
+---
+
+Pixel's antinuke channel deletion module catches members deleting channels in bulk. Deleted channels lose their messages, permissions, and history, which is why this action is a favorite for attackers.
+
+## Usage
+
+```text
+,antinuke channeldelete enable <threshold> <punishment>
+,antinuke channeldelete disable
+,antinuke channeldelete settings
+```
+
+## Parameters
+
+| Name | Description |
+| --- | --- |
+| `threshold` | Number of channel deletions allowed before triggering |
+| `punishment` | Action applied to the offender (see [Punishments](/resources/punishments)) |
+
+## Example
+
+```text
+,antinuke channeldelete enable 1 strip
+```
+
+The first unauthorized channel deletion strips the offender's dangerous permissions immediately.
+
+<Warning>
+  Keep this threshold at 1. Deleted channels can only be restored from backups, so early detection is critical.
+</Warning>

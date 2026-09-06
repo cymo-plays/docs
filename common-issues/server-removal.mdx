@@ -1,0 +1,37 @@
+---
+title: "What Happens When Pixel Is Removed"
+sidebarTitle: "Server Removal"
+description: "Learn how Pixel handles data when the bot is removed from a server, including the retention window and how to restore settings with the ,restore command."
+---
+
+If Pixel is removed from your server, your configuration is preserved for a limited time so you can recover quickly if you reinvite the bot.
+
+## Data Retention
+
+Pixel retains your server settings for **30 days** after the bot is removed. This includes custom commands, welcome messages, logging channels, auto-moderation rules, economy data, and other configurations.
+
+<Note>
+  After 30 days, retained data is permanently deleted and cannot be recovered.
+</Note>
+
+## Restoring Settings
+
+When you reinvite Pixel to the same server within the retention window, you can restore your previous configuration using the restore command:
+
+```text
+,restore
+```
+
+This loads your saved settings back into the server. You do not need to recreate channels, reconfigure logging, or rebuild custom commands from scratch.
+
+## What Is Not Retained
+
+Some transient data, such as temporary moderation cases that have expired or one-time giveaway entries, may not be restored. Core server configuration and economy balances are preserved.
+
+<Warning>
+  Reinvite Pixel using the same bot application. Inviting a different instance or clone will not have access to your retained data.
+</Warning>
+
+<Tip>
+  If you manage multiple servers, keep a record of which servers use Pixel so you do not accidentally pass the 30-day window.
+</Tip>

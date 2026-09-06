@@ -1,0 +1,31 @@
+---
+title: "Server Stat Counters"
+sidebarTitle: "Counters"
+description: "Display live server statistics in voice channel names with Pixel. Track members, boosts, and roles automatically with counter channels."
+---
+
+Pixel's counter feature updates voice channel names in real time to show key server statistics. This is a clean way to display member count, boost totals, or role statistics without manual updates.
+
+## Creating Counters
+
+Use `,counter create` followed by the stat type and a target voice channel.
+
+| Command | Stat Displayed |
+| --- | --- |
+| `,counter create members #channel` | Total member count |
+| `,counter create boosts #channel` | Total server boosts |
+| `,counter create roles #channel` | Total role count |
+
+The channel name will update automatically as the stat changes. For example, a members counter might show `Members: 1,240`.
+
+## Managing Counters
+
+Run `,counter list` to see all active counters in your server. You can remove a counter by deleting the associated voice channel, or re-run the setup command to replace it.
+
+<Note>
+  Counter channels should be placed at the top of your channel list so members see them immediately when joining. Because they are voice channels, you can restrict connect permissions so no one can actually join them.
+</Note>
+
+<Tip>
+  Use multiple counters side by side to build an informative server stats display at the top of your channel list.
+</Tip>

@@ -1,0 +1,40 @@
+---
+title: "Music Playback in Voice Channels"
+sidebarTitle: "Music"
+description: "Play music in your Discord server with Pixel. Queue tracks from YouTube, Spotify, and SoundCloud using simple voice channel commands."
+---
+
+Pixel brings music playback directly into your Discord voice channels. You can queue tracks from YouTube, Spotify, and SoundCloud, then control playback without leaving the server.
+
+## Starting Playback
+
+Use `,play <query>` to search for a track and add it to the queue. Pixel will join your current voice channel automatically. You can search by song name, artist, or paste a direct link.
+
+## Playback Controls
+
+| Command | Action |
+| --- | --- |
+| `,play <query>` | Add a track to the queue |
+| `,queue` | View the current queue |
+| `,skip` | Skip the current track |
+| `,pause` | Pause playback |
+| `,volume <0-100>` | Set the volume level |
+| `,loop track` | Loop the current track |
+| `,loop queue` | Loop the entire queue |
+| `,loop off` | Disable looping |
+
+<Tip>
+  Use `,play` while a track is already playing to add more songs without interrupting the current one.
+</Tip>
+
+## Supported Sources
+
+Pixel can stream audio from these platforms:
+
+- **YouTube** (videos and playlists)
+- **Spotify** (tracks and playlists)
+- **SoundCloud**
+
+<Note>
+  Some sources may require the track to be publicly accessible. Private or region-locked content may fail to load.
+</Note>

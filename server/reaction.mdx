@@ -1,0 +1,47 @@
+---
+title: "Automated Reaction Triggers"
+sidebarTitle: "Reaction"
+description: "Create Pixel reaction triggers so the bot automatically reacts with an emoji whenever a specific keyword is posted in chat."
+---
+
+Pixel reaction triggers let you add automatic emoji responses to messages based on keywords. This is useful for inside jokes, quick acknowledgments, or highlighting certain topics. This page explains how to create, list, and remove reaction triggers.
+
+## Add a reaction trigger
+
+Link a keyword to an emoji so Pixel reacts automatically:
+
+```text
+,reactiontrigger add hello 👋
+```
+
+Now whenever a member sends a message containing "hello", Pixel will react with the waving hand emoji.
+
+Triggers are case-insensitive and match partial words by default, so "hello" will match "hello there" and "say hello".
+
+## List current triggers
+
+View all active reaction triggers in your server:
+
+```text
+,reactiontrigger list
+```
+
+The list shows each trigger ID, keyword, and assigned emoji so you can audit what is currently active.
+
+## Remove a reaction trigger
+
+Delete a trigger using its ID from the list:
+
+```text
+,reactiontrigger remove 3
+```
+
+Removing a trigger stops Pixel from reacting to that keyword immediately.
+
+<Warning>
+  Avoid creating triggers for very common words. Too many automatic reactions can clutter channels and slow down conversations.
+</Warning>
+
+<Tip>
+  Use custom emojis from your server to make reaction triggers feel more personal and on-brand.
+</Tip>

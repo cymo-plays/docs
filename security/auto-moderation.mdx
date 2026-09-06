@@ -1,0 +1,67 @@
+---
+title: "Configure Pixel Auto-Moderation Filters"
+sidebarTitle: "Auto-Moderation"
+description: "Enable and fine-tune Pixel's AutoMod filters for spam, invites, links, mentions, caps, and banned words with custom thresholds and actions."
+---
+
+Pixel's auto-moderation watches chat in real time and takes action when messages break your rules. You can enable individual filters, set how strict each one is, and choose whether Pixel should warn, mute, or ban the offender.
+
+## Enable auto-moderation
+
+Start by turning the module on:
+
+`,automod enable`
+
+Then toggle each filter you need:
+
+`,automod filter <type> on|off`
+
+## Filter types
+
+<AccordionGroup>
+  <Accordion title="Spam">
+    Detects rapid repeated messages or excessive message volume from one user. Use this to stop text flood and copy-paste spam.
+  </Accordion>
+
+  <Accordion title="Invites">
+    Blocks or flags Discord invite links posted by non-staff members. Good for keeping self-promotion under control.
+  </Accordion>
+
+  <Accordion title="Links">
+    Filters URLs in general. You can allow or deny specific domains through additional configuration if Pixel supports it.
+  </Accordion>
+
+  <Accordion title="Mentions">
+    Limits how many users or roles a single message can ping. Prevents mass mention spam and ping raids.
+  </Accordion>
+
+  <Accordion title="Caps">
+    Triggers when a message contains too many capital letters. Helps reduce shouting and hard-to-read text.
+  </Accordion>
+
+  <Accordion title="Banned words">
+    Flags messages containing words you have added to a custom blacklist. Keep your community standards consistent.
+  </Accordion>
+</AccordionGroup>
+
+## Thresholds and actions
+
+Set how sensitive a filter should be:
+
+`,automod threshold <type> <count>`
+
+For example, `,automod threshold mentions 5` means a message with more than 5 mentions triggers the filter.
+
+Choose what Pixel does when a filter fires:
+
+`,automod action warn|mute|ban`
+
+- **warn** deletes the message and notifies the user
+- **mute** applies a timed mute
+- **ban** immediately bans the user
+
+## Related articles
+
+- [Moderation](/security/moderation)
+- [Join Gate](/security/join-gate)
+- [Fake Permissions](/security/fake-permissions)

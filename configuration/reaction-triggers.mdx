@@ -1,0 +1,133 @@
+Automate replies, reactions, and recurring messages.
+
+## Overview
+
+Setup commands require the **manage server** permission. Anyone can use `,react` on demand.
+
+---
+
+## Auto responders
+
+### Creating an auto responder
+
+Reply automatically whenever a trigger phrase is used. The response accepts embed script.
+
+<CodeGroup>
+
+```bash Syntax
+,autoresponder add (response)
+```
+
+```bash Example
+,autoresponder add rules → Read #rules please.
+```
+
+</CodeGroup>
+
+### Scoping a trigger to specific targets
+
+Restrict a trigger to specific roles or channels with `allow` and `deny`.
+
+<CodeGroup>
+
+```bash Syntax
+,autoresponder allow (trigger) (target)
+,autoresponder deny (trigger) (target)
+```
+
+```bash Example
+,autoresponder allow rules #general
+,autoresponder deny rules @Muted
+```
+
+</CodeGroup>
+
+View every allow and deny rule at once with `,autoresponder permissions`.
+
+### Managing responders
+
+List every responder, remove one, or clear them all.
+
+```bash
+,autoresponder list
+,autoresponder remove rules
+,autoresponder clear
+```
+
+---
+
+## Auto reactions
+
+### Reacting to a trigger word
+
+React automatically whenever a trigger word appears in a message.
+
+<CodeGroup>
+
+```bash Syntax
+,autoreact add (content)
+```
+
+```bash Example
+,autoreact add pog 🎉
+```
+
+</CodeGroup>
+
+Manage the rest with `,autoreact list`, `,autoreact remove (trigger)`, and `,autoreact reset`.
+
+### Reacting to every message in a channel
+
+Apply reactions to every message posted in a specific channel.
+
+<CodeGroup>
+
+```bash Syntax
+,autoreact channel add (channel) (reactions)
+```
+
+```bash Example
+,autoreact channel add #introductions 👋
+```
+
+</CodeGroup>
+
+Manage the rest with `,autoreact channel list`, `,autoreact channel remove (channel)`, and `,autoreact channel reset`.
+
+---
+
+## Manual reactions
+
+Add a reaction to any existing message by ID.
+
+<CodeGroup>
+
+```bash Syntax
+,react (message) (emoji)
+```
+
+```bash Example
+,react 1234567890123456789 👀
+```
+
+</CodeGroup>
+
+---
+
+## Timed messages
+
+Post an embed at a fixed interval, useful for rules reminders or event pings.
+
+<CodeGroup>
+
+```bash Syntax
+,timer add (channel) (interval) (code)
+```
+
+```bash Example
+,timer add #announcements 12h {embed}{description: Daily reminder!}
+```
+
+</CodeGroup>
+
+Manage the rest with `,timer list`, `,timer test (channel)`, and `,timer remove (channel)`.

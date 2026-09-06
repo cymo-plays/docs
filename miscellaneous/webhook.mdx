@@ -1,0 +1,37 @@
+---
+title: "Custom Webhook Messages"
+sidebarTitle: "Webhook"
+description: "Create and send custom webhook messages through Pixel. Build webhooks for channels, dispatch styled messages, and manage your webhook list."
+---
+
+Pixel lets you create and send messages through webhooks directly from Discord. This is useful for automated announcements, styled embeds, or scripted messages that appear with a custom name and avatar.
+
+## Creating a Webhook
+
+Run `,webhook create #channel <name>` to register a new webhook in a text channel. Pixel will return a webhook ID you can use for future commands.
+
+## Sending Messages
+
+Use `,webhook send <id> <message>` to post through an existing webhook. You can include plain text or embed syntax.
+
+### Example with an Embed
+
+```text
+,webhook send 123 {title: Server Update}{description: We have added new roles and channels. Check them out!}{color: #3498db}
+```
+
+## Managing Webhooks
+
+| Command | Action |
+| --- | --- |
+| `,webhook create #channel <name>` | Create a new webhook in a channel |
+| `,webhook send <id> <message>` | Send a message through the webhook |
+| `,webhook delete <id>` | Remove a webhook |
+
+<Warning>
+  Webhook IDs are server-specific. Do not share them publicly, as anyone with the ID can send messages through that webhook using Pixel.
+</Warning>
+
+<Tip>
+  Use webhooks with embed syntax to post formatted announcements that look like official bot messages.
+</Tip>

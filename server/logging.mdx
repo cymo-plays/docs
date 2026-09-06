@@ -1,0 +1,51 @@
+---
+title: "Server Event Logging with Pixel"
+sidebarTitle: "Logging"
+description: "Track message edits, deletions, role changes, member joins, and voice events by setting up Pixel’s configurable log channel and event filters."
+---
+
+Pixel’s logging system records key server events in a dedicated channel so your moderation team can review activity without scrolling through every channel. This page explains how to set the log channel, choose event types, and exclude channels you do not need to monitor.
+
+## Set the log channel
+
+Pick a channel where Pixel will post log entries:
+
+```text
+,log set #mod-logs
+```
+
+## Choose which events to log
+
+Enable specific event categories with a comma-separated list:
+
+```text
+,log events message,role,member
+```
+
+You can add or remove categories anytime by re-running the command with the full list you want active.
+
+## Ignore channels
+
+If certain channels are too noisy for logs, exclude them:
+
+```text
+,log ignore #spam-channel
+```
+
+Repeat the command for each channel you want to skip.
+
+## Available event types
+
+| Event category | What Pixel logs |
+| --- | --- |
+| `message` | Message edits and deletions |
+| `role` | Role creations, deletions, and permission changes |
+| `member` | Member joins, leaves, nickname changes, avatar changes |
+| `voice` | Voice channel joins, leaves, moves, and streaming status |
+| `channel` | Channel creations, deletions, and permission overwrites |
+| `emoji` | Emoji and sticker additions and removals |
+| `invite` | Invite creations and deletions |
+
+<Warning>
+  Logging every event in a large server can create a high volume of messages. Start with `message,member` and expand as needed.
+</Warning>

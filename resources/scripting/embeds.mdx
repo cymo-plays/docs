@@ -1,0 +1,104 @@
+---
+title: "Embeds"
+sidebarTitle: "Embeds"
+description: "Guide to understand the fundamentals of scripting embeds."
+---
+
+## Structure
+
+Each parameter in the embed is represented by a key-value pair which is separated by a colon. For example, the `title` parameter will look like `{title: hello {user}}`. The `{user}` is a [variable](https://docs.bleed.bot/resources/scripting/variables) which will be filled in with the user’s display name.
+
+- `{` begins a parameter.
+- `:` separates parameter from content.
+- `$v` separates the parameters.
+- `}` ends a parameter.
+
+## Parameters
+
+- `url` - The embed URL. (`https://..`)
+- `color` - The embed color. (`#FFFFFF`)
+- `title` - The embed title. (`hello {user}`)
+- `description` - The embed description. (`hello {user}`)
+- `image` - The embed image URL. (`https://..`)
+- `thumbnail` - The embed thumbnail URL. (`https://..`)
+- `timestamp` - The embed timestamp. (**NO ARGUMENTS**)
+
+The following parameters require additional arguments which are separated by `&&`.
+
+<AccordionGroup>
+  <Accordion title="Author">
+    - `name` - The author’s name.
+    - `icon` - The author’s icon. **Optional**
+    - `url` - The author’s URL. **Optional**
+
+    ```text
+    {author: name: name && icon: icon && url: url}
+    {author: name: {user} && icon: {user.avatar} && url: https://pixelbot.site.je}
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## Title and description
+
+The title appears at the top of the embed; the description sits below it. Both accept variables (see [Syntax](/resources/syntax)).
+
+```text
+{embed}$v{title: Welcome to {guild.name}}$v{description: Say hi to {user.mention}!}
+```
+
+## Color
+
+Sets the embed's left border color. Accepts a hex code with or without the leading `#`.
+
+```text
+{color: #d49b43}
+```
+
+## Author
+
+Shown above the title. Supports a name, an optional icon, and an optional URL.
+
+```text
+{author: name: Pixel Bot && icon: https://cdn.example.com/pixel.png && url: https://pixelbot.mintlify.app}
+```
+
+## Footer
+
+Shown at the bottom of the embed. Supports text and an optional icon.
+
+```text
+{footer: text: Made with Pixel && icon: https://cdn.example.com/footer.png}
+```
+
+## Thumbnail and image
+
+Thumbnails appear in the top-right of the embed; images stretch across the bottom.
+
+```text
+{thumbnail: {user.avatar}}
+{image: https://cdn.example.com/banner.png}
+```
+
+## Timestamp
+
+Adds a live timestamp to the footer area. Takes no arguments.
+
+```text
+{timestamp}
+```
+
+## Full example
+
+Everything combined into one script:
+
+```text
+{embed}$v{content: Welcome new member!}$v{title: Welcome to {guild.name}}$v{description: Hey {user.mention}, glad to have you.}$v{color: #d49b43}$v{author: name: Pixel && icon: https://cdn.example.com/pixel.png}$v{thumbnail: {user.avatar}}$v{footer: text: Member #{guild.count}}$v{timestamp}
+```
+
+<Note>
+  All blocks are optional except `{embed}`. Add only the ones you need.
+</Note>
+
+<Tip>
+  Combine embed scripts with [variables](/resources/syntax) so your embeds fill in live data when sent.
+</Tip>

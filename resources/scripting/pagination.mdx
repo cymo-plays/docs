@@ -1,0 +1,54 @@
+---
+title: "Paginate Long Embeds in Pixel Scripts"
+sidebarTitle: "Pagination"
+description: "Split long Pixel embed scripts into multiple pages with the {page} separator so members can flip through content using next and previous buttons."
+---
+
+Pixel's pagination lets you build a single embed script that spans multiple pages. Members flip through pages with next and previous buttons attached below the embed, which keeps long content (rules, FAQs, staff lists) readable without overflowing a single message.
+
+## How it works
+
+Insert `{page}` between blocks in an embed script to mark a page break. Everything before the marker becomes page one, the next section becomes page two, and so on. Pixel adds navigation buttons automatically.
+
+## Example
+
+<CodeGroup>
+
+```text Three-page rules embed
+{embed}$v
+{title: Server Rules (1/3)}$v
+{description: Be respectful. No harassment, hate speech, or personal attacks.}$v
+{color: #d49b43}
+{page}
+{embed}$v
+{title: Server Rules (2/3)}$v
+{description: No spam, self-promotion, or unsolicited DMs to members.}$v
+{color: #d49b43}
+{page}
+{embed}$v
+{title: Server Rules (3/3)}$v
+{description: Follow Discord ToS. Staff decisions are final.}$v
+{color: #d49b43}
+```
+
+</CodeGroup>
+
+## Controls
+
+When the embed is sent, Pixel attaches these buttons below it:
+
+| Button | Action |
+| --- | --- |
+| ◀ Previous | Go back one page |
+| ▶ Next | Advance one page |
+| ✖ Close | Dismiss the pagination |
+
+<Note>
+  Pagination works in any command that accepts an embed script, including welcome messages, reaction triggers, and webhook sends.
+</Note>
+
+<Tip>
+  Keep each page short. Two or three short fields per page reads better than one dense wall of text.
+</Tip>
+
+For the full variable list you can use inside paginated scripts, see [Syntax](/resources/syntax).

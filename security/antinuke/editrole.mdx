@@ -1,0 +1,33 @@
+---
+title: "Role editing"
+sidebarTitle: "Role editing"
+description: "Detect suspicious role permission changes with Pixel antinuke. Trigger a punishment when a member edits a role's dangerous permissions."
+---
+
+Pixel's antinuke role editing module watches for permission changes that could escalate a member's access. Attackers often edit an existing role to grant themselves Administrator or Manage Server rather than creating a new one.
+
+## Usage
+
+```text
+,antinuke editrole enable <punishment>
+,antinuke editrole disable
+,antinuke editrole settings
+```
+
+## Parameters
+
+| Name | Description |
+| --- | --- |
+| `punishment` | Action applied when a role's dangerous permissions are edited (see [Punishments](/resources/punishments)) |
+
+## Example
+
+```text
+,antinuke editrole enable ban
+```
+
+Any edit that adds a dangerous permission to a role results in an immediate ban for the offender.
+
+<Note>
+  This module fires on the first offending edit. There is no threshold parameter.
+</Note>

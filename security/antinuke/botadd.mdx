@@ -1,0 +1,33 @@
+---
+title: "Bot adding"
+sidebarTitle: "Bot adding"
+description: "Block unauthorized bot invites with Pixel antinuke. Punish members who add new bots to your server without approval."
+---
+
+Pixel's antinuke bot adding module blocks unauthorized bots from joining your server. Attackers often invite a malicious bot with elevated permissions and use it to raid the server.
+
+## Usage
+
+```text
+,antinuke botadd enable <punishment>
+,antinuke botadd disable
+,antinuke botadd settings
+```
+
+## Parameters
+
+| Name | Description |
+| --- | --- |
+| `punishment` | Action applied to the member who added the bot (see [Punishments](/resources/punishments)) |
+
+## Example
+
+```text
+,antinuke botadd enable strip
+```
+
+Any unauthorized bot invite strips the inviter's dangerous permissions and, in most configurations, kicks the newly added bot.
+
+<Tip>
+  Whitelist administrators who need to add trusted bots so their invites do not fire the module.
+</Tip>

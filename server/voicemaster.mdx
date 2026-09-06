@@ -1,0 +1,45 @@
+---
+title: "Create Dynamic Voice Channels with VoiceMaster"
+sidebarTitle: "VoiceMaster"
+description: "Set up Pixel VoiceMaster to generate temporary voice channels that members can rename, lock, hide, and manage on their own."
+---
+
+Pixel VoiceMaster creates on-demand temporary voice channels whenever a member joins a designated lobby. The channel owner gets full control over renaming, locking, hiding, and user limits. This page walks through setup and explains the controls available to members.
+
+## Setup flow
+
+Follow these steps to activate VoiceMaster in your server:
+
+<Steps>
+  <Step title="Run the setup command">
+    Type `,voicemaster setup` in any channel where Pixel can respond.
+  </Step>
+  <Step title="Choose the lobby channel">
+    Pixel will ask you to select or create a voice channel that acts as the lobby. When a member joins this lobby, Pixel automatically creates a new temporary channel and moves them into it.
+  </Step>
+  <Step title="Set the category">
+    Pick a category where temporary channels will be created. Keeping them in one category makes cleanup easier.
+  </Step>
+  <Step title="Test the flow">
+    Join the lobby channel. Pixel should create a new channel, move you in, and grant you owner permissions.
+  </Step>
+</Steps>
+
+## User controls
+
+Once someone owns a temporary voice channel, they can use these commands to manage it:
+
+| Command | Effect |
+| --- | --- |
+| `,vc rename <name>` | Changes the channel name |
+| `,vc lock` | Prevents non-moderators from joining |
+| `,vc unlock` | Removes the join lock |
+| `,vc hide` | Hides the channel from the channel list for non-members |
+| `,vc unhide` | Makes the channel visible again |
+| `,vc limit <number>` | Sets a user limit for the channel |
+| `,vc claim` | Claims ownership if the original owner leaves |
+| `,vc save` | Saves the current settings as a preset for future channels |
+
+<Note>
+  Temporary channels are deleted automatically when the last member leaves. There is no manual cleanup needed.
+</Note>

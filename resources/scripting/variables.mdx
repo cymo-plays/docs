@@ -1,0 +1,31 @@
+---
+title: "Pixel Scripting Variables Reference"
+sidebarTitle: "Variables"
+description: "Quick reference for the most common Pixel scripting variables. For the full list and advanced usage, see the Syntax page."
+---
+
+Pixel's scripting system lets you insert dynamic values into messages, embeds, and automated responses. Variables are wrapped in braces and resolve at runtime. For the complete list and advanced syntax rules, see the [Syntax](/resources/syntax) page.
+
+## Common Variables
+
+| Variable | Resolves to |
+| --- | --- |
+| `{user.mention}` | A clickable mention of the target user |
+| `{user.name}` | The user's display name |
+| `{guild.name}` | The current server's name |
+| `{guild.count}` | The server's total member count |
+| `{channel.mention}` | A clickable mention of the target channel |
+
+## How to Use Variables
+
+Drop any variable directly into a message or embed block. For example:
+
+```text
+{embed}$v
+{title: Welcome to {guild.name}}
+{description: Hello {user.mention}, you are member #{guild.count}!}
+```
+
+<Tip>
+  Variables work anywhere Pixel accepts a script, including welcome messages, custom commands, and automated moderation responses.
+</Tip>

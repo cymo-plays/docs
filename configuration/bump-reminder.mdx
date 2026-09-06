@@ -1,0 +1,78 @@
+Never miss a bump. Pixel detects when your server is bumped, thanks the bumper, and pings the channel again when the cooldown ends.
+
+## Overview
+
+Setup commands require the **manage server** permission. The leaderboard is open to everyone.
+
+---
+
+## Enabling the reminder
+
+Turn the module on for your server.
+
+```bash
+,bumpreminder enable
+```
+
+Disable it with `,bumpreminder disable`.
+
+---
+
+## Customizing the messages
+
+Both messages accept embed script codes. See [Embed script syntax](/resources/syntax) for the full variable list.
+
+### Setting the reminder message
+
+This is the message Pixel sends when the cooldown ends and it's time to bump again.
+
+<CodeGroup>
+
+```bash Syntax
+,bumpreminder reminder (code)
+```
+
+```bash Example
+,bumpreminder reminder {embed}{description: It's time to /bump!}
+```
+
+</CodeGroup>
+
+### Setting the thank-you message
+
+This is the message Pixel sends immediately after someone bumps.
+
+<CodeGroup>
+
+```bash Syntax
+,bumpreminder thankyou (code)
+```
+
+```bash Example
+,bumpreminder thankyou {embed}{description: Thanks {user.mention}!}
+```
+
+</CodeGroup>
+
+---
+
+## Previewing and testing
+
+Preview the stored messages or trigger a test send.
+
+```bash
+,bumpreminder view reminder
+,bumpreminder view thankyou
+,bumpreminder test reminder
+,bumpreminder test thankyou
+```
+
+---
+
+## Leaderboard
+
+See who bumps the most.
+
+```bash
+,bumpreminder leaderboard
+```

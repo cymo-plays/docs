@@ -1,0 +1,124 @@
+Repost messages that hit a reaction threshold into a dedicated channel.
+
+## Overview
+
+Starboard watches for reactions on messages. When a message hits the configured count, Pixel reposts it to your starboard channel. Clownboard is the same feature under a separate command family, useful for a downvote-style board.
+
+All setup commands require the **manage server** permission.
+
+---
+
+## Configuring the starboard
+
+### Enabling the starboard
+
+Turn on the starboard for your server.
+
+```bash
+,starboard enable
+```
+
+Disable it with `,starboard disable`.
+
+### Setting the channel
+
+Point starboard at the channel where reposts should appear.
+
+<CodeGroup>
+
+```bash Syntax
+,starboard channel (channel)
+```
+
+```bash Example
+,starboard channel #starboard
+```
+
+</CodeGroup>
+
+### Setting the emoji
+
+Choose the reaction emoji that qualifies a message.
+
+<CodeGroup>
+
+```bash Syntax
+,starboard emoji (emoji)
+```
+
+```bash Example
+,starboard emoji ⭐
+```
+
+</CodeGroup>
+
+### Setting the threshold
+
+Set the minimum number of reactions required to repost a message.
+
+<CodeGroup>
+
+```bash Syntax
+,starboard count (count)
+```
+
+```bash Example
+,starboard count 5
+```
+
+</CodeGroup>
+
+---
+
+## Ignoring channels or users
+
+Prevent specific channels, roles, or users from qualifying for the starboard.
+
+<CodeGroup>
+
+```bash Syntax
+,starboard ignore add (target)
+```
+
+```bash Example
+,starboard ignore add #off-topic
+```
+
+</CodeGroup>
+
+Remove an entry with `,starboard ignore remove (target)`.
+
+---
+
+## Viewing and resetting
+
+Use `starboard config` to view the current setup, or `starboard reset` to wipe it.
+
+```bash
+,starboard config
+,starboard reset
+```
+
+---
+
+## Clownboard
+
+Clownboard uses the same commands under the `,clownboard` prefix.
+
+<CodeGroup>
+
+```bash Syntax
+,clownboard enable
+,clownboard channel (channel)
+,clownboard emoji (emoji)
+,clownboard count (count)
+```
+
+```bash Example
+,clownboard enable
+,clownboard channel #clownboard
+,clownboard emoji 🤡
+,clownboard count 3
+```
+
+</CodeGroup>

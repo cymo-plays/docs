@@ -1,0 +1,49 @@
+---
+title: "Highlight Messages with Starboard"
+sidebarTitle: "Starboard"
+description: "Set up Pixel’s starboard to automatically pin popular messages to a dedicated channel when they reach a reaction threshold."
+---
+
+Pixel’s starboard lets your community highlight great messages by reacting with a star or custom emoji. Once a message hits the configured threshold, Pixel reposts it to a starboard channel for everyone to see. This page covers setup, customization, and how starred messages appear.
+
+## Set the starboard channel
+
+Choose the channel where starred messages will be posted:
+
+```text
+,starboard set #starboard
+```
+
+## Set the reaction threshold
+
+Decide how many reactions a message needs before it appears on the starboard:
+
+```text
+,starboard threshold 5
+```
+
+A threshold of 3 to 5 works well for small servers. Larger communities may prefer 7 to 10.
+
+## Choose a custom emoji
+
+By default Pixel uses the standard star emoji. You can change it to any custom or default emoji:
+
+```text
+,starboard emoji :pixelstar:
+```
+
+## How a starred message looks
+
+When a message reaches the threshold, Pixel posts an embed in the starboard channel that includes:
+
+- The original message content
+- A jump link to the original message
+- The author’s name and avatar
+- The channel where it was posted
+- The reaction count
+
+This gives your community a permanent, browsable collection of the best moments without cluttering other channels.
+
+<Tip>
+  Combine starboard with a dedicated channel and a fun custom emoji to encourage more engagement.
+</Tip>

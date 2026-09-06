@@ -1,0 +1,143 @@
+Greet joiners, say goodbye to leavers, celebrate boosts, and DM new members with fully customized embeds.
+
+## Overview
+
+Every message accepts embed script for variables and rich formatting. See [Embed script syntax](/resources/syntax) for the full variable list. All setup commands require the **manage server** permission.
+
+---
+
+## Welcome messages
+
+### Adding a welcome message
+
+Set a welcome message for a specific channel. You can add welcome messages in multiple channels at once.
+
+<CodeGroup>
+
+```bash Syntax
+,welcome add (channel) (code)
+```
+
+```bash Example
+,welcome add #general {embed}{description: Welcome {user.mention}!}
+```
+
+</CodeGroup>
+
+### Testing your welcome message
+
+Preview the message without waiting for someone to join.
+
+<CodeGroup>
+
+```bash Syntax
+,welcome test (channel)
+```
+
+```bash Example
+,welcome test #general
+```
+
+</CodeGroup>
+
+### Pinging a member on join
+
+Send a temporary ping in a channel every time someone joins.
+
+<CodeGroup>
+
+```bash Syntax
+,welcome joinping (channel)
+```
+
+```bash Example
+,welcome joinping #general
+```
+
+</CodeGroup>
+
+### Auto-deleting welcome messages
+
+Delete welcome messages after the configured time so the channel stays clean.
+
+<CodeGroup>
+
+```bash Syntax
+,welcome delete enable (channel) (time)
+```
+
+```bash Example
+,welcome delete enable #general 30s
+```
+
+</CodeGroup>
+
+### Viewing and removing welcome messages
+
+Use `welcome list` to see every configured channel, `welcome remove (channel)` to remove one, and `welcome reset` to remove all.
+
+```bash
+,welcome list
+,welcome remove #general
+,welcome reset
+```
+
+---
+
+## Goodbye messages
+
+Same shape as welcome, under the `leave` command.
+
+<CodeGroup>
+
+```bash Syntax
+,leave add (channel) (code)
+```
+
+```bash Example
+,leave add #goodbye {embed}{description: {user.name} has left the server.}
+```
+
+</CodeGroup>
+
+Manage the rest with `,leave list`, `,leave test (channel)`, `,leave remove (channel)`, and `,leave reset`.
+
+---
+
+## Boost messages
+
+Celebrate new server boosts.
+
+<CodeGroup>
+
+```bash Syntax
+,boost add (channel) (code)
+```
+
+```bash Example
+,boost add #boosts {embed}{description: Thanks {user.mention} for boosting!}
+```
+
+</CodeGroup>
+
+Manage the rest with `,boost list`, `,boost test (channel)`, `,boost remove (channel)`, and `,boost reset`.
+
+---
+
+## Join DMs
+
+DM every new member on join. Only one join DM can be set at a time.
+
+<CodeGroup>
+
+```bash Syntax
+,joindm add (code)
+```
+
+```bash Example
+,joindm add {embed}{description: Welcome to {server.name}! Read the rules.}
+```
+
+</CodeGroup>
+
+Manage the rest with `,joindm list`, `,joindm test`, `,joindm remove`, and `,joindm reset`.
