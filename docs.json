@@ -7,9 +7,9 @@
   },
   "favicon": "/favicon.gif",
   "colors": {
-    "primary": "#e5b168",
-    "light": "#f0c78a",
-    "dark": "#d49b43",
+    "primary": "#684f2b",
+    "light": "#ac721a",
+    "dark": "#675130",
     "background": {
       "dark": "#070709",
       "light": "#fafafa"
@@ -61,5 +61,10 @@
   ],
   "footerSocials": {
     "discord": "https://discord.gg/8RE32XrqBT"
+  },
+  "background": {
+    "color": {
+      "light": "#fffefe"
+    }
   }
 }
