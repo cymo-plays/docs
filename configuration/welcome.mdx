@@ -14,11 +14,11 @@ Set a welcome message for a specific channel. You can add welcome messages in mu
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,welcome add (channel) (code)
 ```
 
-```bash Example
+```js Example
 ,welcome add #general {embed}{description: Welcome {user.mention}!}
 ```
 
@@ -30,11 +30,11 @@ Preview the message without waiting for someone to join.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,welcome test (channel)
 ```
 
-```bash Example
+```js Example
 ,welcome test #general
 ```
 
@@ -46,11 +46,11 @@ Send a temporary ping in a channel every time someone joins.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,welcome joinping (channel)
 ```
 
-```bash Example
+```js Example
 ,welcome joinping #general
 ```
 
@@ -62,11 +62,11 @@ Delete welcome messages after the configured time so the channel stays clean.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,welcome delete setup (channel) (time)
 ```
 
-```bash Example
+```js Example
 ,welcome delete setup #general 30s
 ```
 
@@ -76,7 +76,7 @@ Delete welcome messages after the configured time so the channel stays clean.
 
 Use `welcome list` to see every configured channel, `welcome remove (channel)` to remove one, and `welcome reset` to remove all.
 
-```bash
+```js
 ,welcome list
 ,welcome remove #general
 ,welcome reset
@@ -90,11 +90,11 @@ Same shape as welcome, under the `leave` command.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,leave add (channel) (code)
 ```
 
-```bash Example
+```js Example
 ,leave add #goodbye {embed}{description: {user.name} has left the server.}
 ```
 
@@ -110,11 +110,11 @@ Celebrate new server boosts.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,boost add (channel) (code)
 ```
 
-```bash Example
+```js Example
 ,boost add #boosts {embed}{description: Thanks {user.mention} for boosting!}
 ```
 
@@ -130,11 +130,11 @@ DM every new member on join. Only one join DM can be set at a time.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,joindm add (code)
 ```
 
-```bash Example
+```js Example
 ,joindm add {embed}{description: Welcome to {server.name}! Read the rules.}
 ```
 
