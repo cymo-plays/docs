@@ -1,5 +1,5 @@
 ---
-title: "Channel creation"
+title: "Channelcreate"
 sidebarTitle: "Channel creation"
 description: "Stop channel spam with Pixel antinuke. Set a per-user threshold for channel creations and choose the punishment applied when it is crossed."
 ---
@@ -8,8 +8,8 @@ Pixel's antinuke channel creation module watches for members creating too many c
 
 ## Usage
 
-```text
-,antinuke channelcreate enable <threshold> <punishment>
+```js
+,antinuke channelcreate setup <threshold> <punishment>
 ,antinuke channelcreate disable
 ,antinuke channelcreate settings
 ```
@@ -23,8 +23,8 @@ Pixel's antinuke channel creation module watches for members creating too many c
 
 ## Example
 
-```text
-,antinuke channelcreate enable 3 strip
+```js
+,antinuke channelcreate setup 3 strip
 ```
 
 The 4th channel creation strips the offender's dangerous permissions.

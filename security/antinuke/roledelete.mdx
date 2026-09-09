@@ -1,5 +1,5 @@
 ---
-title: "Role deletion"
+title: "Roledelete"
 sidebarTitle: "Role deletion"
 description: "Catch mass role deletions with Pixel's antinuke module. Set a per-user threshold and choose the punishment applied when the limit is exceeded."
 ---
@@ -8,8 +8,8 @@ Pixel's antinuke role deletion module stops members from wiping out roles in bul
 
 ## Usage
 
-```text
-,antinuke roledelete enable <threshold> <punishment>
+```js
+,antinuke roledelete setup <threshold> <punishment>
 ,antinuke roledelete disable
 ,antinuke roledelete settings
 ```
@@ -23,8 +23,8 @@ Pixel's antinuke role deletion module stops members from wiping out roles in bul
 
 ## Example
 
-```text
-,antinuke roledelete enable 1 strip
+```js
+,antinuke roledelete setup 1 strip
 ```
 
 A single unauthorized role deletion strips the offender's dangerous permissions immediately.

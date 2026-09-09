@@ -1,5 +1,5 @@
 ---
-title: "Automated Reaction Triggers"
+title: "Reaction"
 sidebarTitle: "Reaction"
 description: "Create Pixel reaction triggers so the bot automatically reacts with an emoji whenever a specific keyword is posted in chat."
 ---
@@ -10,7 +10,7 @@ Pixel reaction triggers let you add automatic emoji responses to messages based 
 
 Link a keyword to an emoji so Pixel reacts automatically:
 
-```text
+```js
 ,reactiontrigger add hello 👋
 ```
 
@@ -22,7 +22,7 @@ Triggers are case-insensitive and match partial words by default, so "hello" wil
 
 View all active reaction triggers in your server:
 
-```text
+```js
 ,reactiontrigger list
 ```
 
@@ -32,7 +32,7 @@ The list shows each trigger ID, keyword, and assigned emoji so you can audit wha
 
 Delete a trigger using its ID from the list:
 
-```text
+```js
 ,reactiontrigger remove 3
 ```
 

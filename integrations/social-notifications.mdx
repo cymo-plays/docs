@@ -1,5 +1,5 @@
 ---
-title: "Social Media Notifications in Pixel"
+title: "Social Notifications"
 sidebarTitle: "Social Notifications"
 description: "Set up Pixel to automatically post notifications when creators upload to YouTube, go live on Twitch, post on Twitter, or publish on TikTok."
 ---
@@ -22,7 +22,7 @@ Use the `,socials` command group to add, list, and remove notifications.
   <Tab title="YouTube">
     Subscribe to a YouTube channel to get a Discord message when a new video is published.
 
-    ```text
+    ```js
     ,socials add youtube <channel-id-or-handle> #announcements
     ```
 
@@ -31,7 +31,7 @@ Use the `,socials` command group to add, list, and remove notifications.
   <Tab title="Twitch">
     Get notified when a Twitch user goes live or changes stream title.
 
-    ```text
+    ```js
     ,socials add twitch <username> #live-notifs
     ```
 
@@ -40,7 +40,7 @@ Use the `,socials` command group to add, list, and remove notifications.
   <Tab title="Twitter / X">
     Receive a Discord message when an account posts a new tweet.
 
-    ```text
+    ```js
     ,socials add twitter <username> #social-feed
     ```
 
@@ -49,7 +49,7 @@ Use the `,socials` command group to add, list, and remove notifications.
   <Tab title="TikTok">
     Be alerted when a TikTok creator publishes a new video.
 
-    ```text
+    ```js
     ,socials add tiktok <username> #videos
     ```
 
@@ -61,7 +61,7 @@ Use the `,socials` command group to add, list, and remove notifications.
 
 Run `,socials list` to see every subscription with its ID. Then remove one with:
 
-```text
+```js
 ,socials remove <id>
 ```
 

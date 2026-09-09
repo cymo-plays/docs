@@ -1,5 +1,5 @@
 ---
-title: "Pixel Punishment Types and Appeals"
+title: "Punishments"
 sidebarTitle: "Punishments"
 description: "Reference for Pixel punishment types, duration formats, DM variables, and how to set an appeal URL so offenders can contest moderation actions."
 ---
@@ -21,7 +21,7 @@ Pixel supports a full range of moderation punishments, each with a case ID, opti
 
 Use short suffixes for durations: `s` seconds, `m` minutes, `h` hours, `d` days, `w` weeks.
 
-```text
+```js
 ,mute @user 30m Spamming in #general
 ,ban @user 7d Raid attempt
 ,jail @user 1h Repeated warnings
@@ -47,7 +47,7 @@ For the full variable list, see [Syntax](/resources/syntax).
 
 Set an appeal URL so punished members know where to contest their case. Pixel injects it into the punishment DM through the `{appeal.url}` variable.
 
-```text
+```js
 ,appeal set https://forms.example.com/pixel-appeal
 ```
 

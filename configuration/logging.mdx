@@ -14,7 +14,7 @@ Manual setup commands require the **manage server** permission. `,logs setup` re
 
 Create a full logging category and channels with one command.
 
-```bash
+```js
 ,logs setup
 ```
 
@@ -24,11 +24,11 @@ Add one event category to a specific channel.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,logs add (type) (channel)
 ```
 
-```bash Example
+```js Example
 ,logs add moderation #mod-log
 ```
 
@@ -42,11 +42,11 @@ Stop logging a specific event type.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,logs remove (type)
 ```
 
-```bash Example
+```js Example
 ,logs remove voice
 ```
 
@@ -60,11 +60,11 @@ Exclude a user, role, or channel from being logged.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,logs ignore add (target)
 ```
 
-```bash Example
+```js Example
 ,logs ignore add @BotRole
 ```
 
@@ -78,7 +78,7 @@ Remove an entry with `,logs ignore remove (target)` and inspect with `,logs igno
 
 List every category and its channel.
 
-```bash
+```js
 ,logs list
 ```
 

@@ -14,7 +14,7 @@ Server setup commands require the **administrator** permission. Owner commands r
 
 Run setup once to create the lobby channel and category.
 
-```bash
+```js
 ,voicemaster setup
 ```
 
@@ -26,11 +26,11 @@ Move future temporary channels into a specific category.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,voicemaster category (category)
 ```
 
-```bash Example
+```js Example
 ,voicemaster category Voice Channels
 ```
 
@@ -42,13 +42,13 @@ Configure the defaults every new channel inherits.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,voicemaster region (region)
 ,voicemaster bitrate (bitrate)
 ,voicemaster name (name)
 ```
 
-```bash Example
+```js Example
 ,voicemaster region us-east
 ,voicemaster bitrate 64000
 ,voicemaster name {user.name}'s VC
@@ -62,11 +62,11 @@ Save each owner's settings so they apply the next time they create a channel.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,voicemaster savesettings (option)
 ```
 
-```bash Example
+```js Example
 ,voicemaster savesettings on
 ```
 
@@ -78,11 +78,11 @@ Post an embed with buttons for common voice actions.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,interface (channel) (code)
 ```
 
-```bash Example
+```js Example
 ,interface #voice-hub {embed}{title: Manage your channel}
 ```
 
@@ -92,7 +92,7 @@ Post an embed with buttons for common voice actions.
 
 Prevent members from using specific words in their channel names. Requires **manage server**.
 
-```bash
+```js
 ,voicemaster blacklist badword
 ,voicemaster unblacklist badword
 ,voicemaster blacklisted
@@ -108,11 +108,11 @@ Owners run these against their own voice channel.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,voice rename (name)
 ```
 
-```bash Example
+```js Example
 ,voice rename Gaming Squad
 ```
 
@@ -122,11 +122,11 @@ Owners run these against their own voice channel.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,voice limit (limit)
 ```
 
-```bash Example
+```js Example
 ,voice limit 5
 ```
 
@@ -136,7 +136,7 @@ Owners run these against their own voice channel.
 
 Lock keeps new members out. Hide removes the channel from the sidebar for non-members. Reveal and unlock reverse them.
 
-```bash
+```js
 ,voice lock
 ,voice unlock
 ,voice hide
@@ -149,13 +149,13 @@ Permit and reject specific members from joining, or force-kick someone.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,voice permit (member)
 ,voice reject (member)
 ,voice kick (member)
 ```
 
-```bash Example
+```js Example
 ,voice permit @friend
 ,voice reject @annoying
 ,voice kick @annoying
@@ -169,11 +169,11 @@ Hand the channel to another member.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,voice transfer (member)
 ```
 
-```bash Example
+```js Example
 ,voice transfer @friend
 ```
 
@@ -183,7 +183,7 @@ Hand the channel to another member.
 
 Claim ownership when the original owner has left.
 
-```bash
+```js
 ,voice claim
 ```
 
@@ -191,11 +191,11 @@ Claim ownership when the original owner has left.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,voice status (status)
 ```
 
-```bash Example
+```js Example
 ,voice status Playing ranked
 ```
 
@@ -209,13 +209,13 @@ Save a channel configuration to reuse it later.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,voice preset add (name)
 ,voice preset load (name)
 ,voice preset autoload (name)
 ```
 
-```bash Example
+```js Example
 ,voice preset add gaming
 ,voice preset load gaming
 ,voice preset autoload gaming

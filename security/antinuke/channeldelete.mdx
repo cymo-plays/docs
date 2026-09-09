@@ -1,5 +1,5 @@
 ---
-title: "Channel deletion"
+title: "Channeldelete"
 sidebarTitle: "Channel deletion"
 description: "Stop mass channel deletions with Pixel antinuke. Set a low threshold and pick a punishment so a single wipe attempt is caught immediately."
 ---
@@ -8,8 +8,8 @@ Pixel's antinuke channel deletion module catches members deleting channels in bu
 
 ## Usage
 
-```text
-,antinuke channeldelete enable <threshold> <punishment>
+```js
+,antinuke channeldelete setup <threshold> <punishment>
 ,antinuke channeldelete disable
 ,antinuke channeldelete settings
 ```
@@ -23,8 +23,8 @@ Pixel's antinuke channel deletion module catches members deleting channels in bu
 
 ## Example
 
-```text
-,antinuke channeldelete enable 1 strip
+```js
+,antinuke channeldelete setup 1 strip
 ```
 
 The first unauthorized channel deletion strips the offender's dangerous permissions immediately.

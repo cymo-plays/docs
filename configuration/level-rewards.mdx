@@ -10,12 +10,12 @@ Setup and admin commands require the **manage server** permission.
 
 ## Configuring leveling
 
-### Enabling leveling
+### Setup leveling
 
 Turn the module on for your server.
 
-```bash
-,level enable
+```js
+,level setup
 ```
 
 Disable it with `,level disable`.
@@ -26,11 +26,11 @@ Choose where level-up announcements are posted.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,level channel (channel)
 ```
 
-```bash Example
+```js Example
 ,level channel #level-ups
 ```
 
@@ -42,11 +42,11 @@ The message supports embed script and variables like `{user.mention}` and `{leve
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,level message (message)
 ```
 
-```bash Example
+```js Example
 ,level message GG {user.mention}, you reached level {level}!
 ```
 
@@ -64,11 +64,11 @@ Anyone can look up their own rank card or someone else's.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,rank (member)
 ```
 
-```bash Example
+```js Example
 ,rank @jonathan
 ```
 
@@ -78,7 +78,7 @@ Anyone can look up their own rank card or someone else's.
 
 Show the top XP earners in the server.
 
-```bash
+```js
 ,level leaderboard
 ```
 
@@ -92,11 +92,11 @@ Grant a role automatically when a member hits a level.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,level rewards add (level) (role)
 ```
 
-```bash Example
+```js Example
 ,level rewards add 10 @Veteran
 ```
 
@@ -108,11 +108,11 @@ Decide if members keep previous reward roles when they earn a new one.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,level rewards stack (option)
 ```
 
-```bash Example
+```js Example
 ,level rewards stack on
 ```
 
@@ -122,7 +122,7 @@ Decide if members keep previous reward roles when they earn a new one.
 
 Retroactively assign role rewards to members who already qualify.
 
-```bash
+```js
 ,level rewards sync
 ```
 
@@ -138,11 +138,11 @@ Multiply text XP for everyone.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,level multiplier (multiplier)
 ```
 
-```bash Example
+```js Example
 ,level multiplier 2
 ```
 
@@ -154,11 +154,11 @@ Reward server boosters with extra XP.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,level booster (multiplier)
 ```
 
-```bash Example
+```js Example
 ,level booster 1.5
 ```
 
@@ -170,11 +170,11 @@ Grant extra XP to members of a specific role.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,level rolemultiplier add (role) (multiplier)
 ```
 
-```bash Example
+```js Example
 ,level rolemultiplier add @VIP 3
 ```
 
@@ -186,7 +186,7 @@ Remove with `,level rolemultiplier remove (role)` and inspect every multiplier w
 
 The same three commands apply to voice XP under `,level voice`.
 
-```bash
+```js
 ,level voice multiplier 2
 ,level voice booster 1.5
 ,level voice rolemultiplier add @VIP 3
@@ -200,11 +200,11 @@ Exclude channels, roles, or members from earning XP.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,level ignore add (target)
 ```
 
-```bash Example
+```js Example
 ,level ignore add #bots
 ```
 
@@ -220,11 +220,11 @@ Toggle whether Pixel commands count toward XP with `,level ignore command (optio
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,level set (member) (level)
 ```
 
-```bash Example
+```js Example
 ,level set @jonathan 15
 ```
 
@@ -234,11 +234,11 @@ Toggle whether Pixel commands count toward XP with `,level ignore command (optio
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,level reset (member)
 ```
 
-```bash Example
+```js Example
 ,level reset @jonathan
 ```
 

@@ -1,5 +1,5 @@
 ---
-title: "Pixel Embed Syntax & Variables"
+title: "Syntax"
 sidebarTitle: "Syntax"
 description: "Pixel's embed scripting language plus every variable available for welcome messages, moderation, tickets, invite tracking, and more."
 ---
@@ -12,11 +12,11 @@ An embed script is one continuous line. Start with `{embed}` and chain each bloc
 
 <CodeGroup>
 
-```text Welcome message
+```javascript Welcome message
 {embed}$v{title: Welcome to {guild.name}}$v{description: Hey {user.mention}, thanks for joining!}$v{color: #3498db}$v{footer: text: Read the rules in #rules}
 ```
 
-```text Ticket opened
+```js Ticket opened
 {embed}$v{title: Ticket Opened}$v{description: {user.mention} opened a ticket for {topic}.}$v{color: #2ecc71}
 ```
 

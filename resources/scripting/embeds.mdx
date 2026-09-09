@@ -31,7 +31,7 @@ The following parameters require additional arguments which are separated by `&
     - `icon` - The author’s icon. **Optional**
     - `url` - The author’s URL. **Optional**
 
-    ```text
+    ```js
     {author: name: name && icon: icon && url: url}
     {author: name: {user} && icon: {user.avatar} && url: https://pixelbot.site.je}
     ```
@@ -42,7 +42,7 @@ The following parameters require additional arguments which are separated by `&
 
 The title appears at the top of the embed; the description sits below it. Both accept variables (see [Syntax](/resources/syntax)).
 
-```text
+```js
 {embed}$v{title: Welcome to {guild.name}}$v{description: Say hi to {user.mention}!}
 ```
 
@@ -50,7 +50,7 @@ The title appears at the top of the embed; the description sits below it. Both a
 
 Sets the embed's left border color. Accepts a hex code with or without the leading `#`.
 
-```text
+```js
 {color: #d49b43}
 ```
 
@@ -58,7 +58,7 @@ Sets the embed's left border color. Accepts a hex code with or without the leadi
 
 Shown above the title. Supports a name, an optional icon, and an optional URL.
 
-```text
+```js
 {author: name: Pixel Bot && icon: https://cdn.example.com/pixel.png && url: https://pixelbot.mintlify.app}
 ```
 
@@ -66,7 +66,7 @@ Shown above the title. Supports a name, an optional icon, and an optional URL.
 
 Shown at the bottom of the embed. Supports text and an optional icon.
 
-```text
+```js
 {footer: text: Made with Pixel && icon: https://cdn.example.com/footer.png}
 ```
 
@@ -74,7 +74,7 @@ Shown at the bottom of the embed. Supports text and an optional icon.
 
 Thumbnails appear in the top-right of the embed; images stretch across the bottom.
 
-```text
+```js
 {thumbnail: {user.avatar}}
 {image: https://cdn.example.com/banner.png}
 ```
@@ -83,7 +83,7 @@ Thumbnails appear in the top-right of the embed; images stretch across the botto
 
 Adds a live timestamp to the footer area. Takes no arguments.
 
-```text
+```js
 {timestamp}
 ```
 
@@ -91,7 +91,7 @@ Adds a live timestamp to the footer area. Takes no arguments.
 
 Everything combined into one script:
 
-```text
+```js
 {embed}$v{content: Welcome new member!}$v{title: Welcome to {guild.name}}$v{description: Hey {user.mention}, glad to have you.}$v{color: #d49b43}$v{author: name: Pixel && icon: https://cdn.example.com/pixel.png}$v{thumbnail: {user.avatar}}$v{footer: text: Member #{guild.count}}$v{timestamp}
 ```
 

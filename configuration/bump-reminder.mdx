@@ -6,12 +6,12 @@ Setup commands require the **manage server** permission. The leaderboard is open
 
 ---
 
-## Enabling the reminder
+## Setup the reminder
 
 Turn the module on for your server.
 
-```bash
-,bumpreminder enable
+```js
+,bumpreminder setup
 ```
 
 Disable it with `,bumpreminder disable`.
@@ -28,11 +28,11 @@ This is the message Pixel sends when the cooldown ends and it's time to bump aga
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,bumpreminder reminder (code)
 ```
 
-```bash Example
+```js Example
 ,bumpreminder reminder {embed}{description: It's time to /bump!}
 ```
 
@@ -44,11 +44,11 @@ This is the message Pixel sends immediately after someone bumps.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,bumpreminder thankyou (code)
 ```
 
-```bash Example
+```js Example
 ,bumpreminder thankyou {embed}{description: Thanks {user.mention}!}
 ```
 
@@ -60,7 +60,7 @@ This is the message Pixel sends immediately after someone bumps.
 
 Preview the stored messages or trigger a test send.
 
-```bash
+```js
 ,bumpreminder view reminder
 ,bumpreminder view thankyou
 ,bumpreminder test reminder
@@ -73,6 +73,6 @@ Preview the stored messages or trigger a test send.
 
 See who bumps the most.
 
-```bash
+```js
 ,bumpreminder leaderboard
 ```

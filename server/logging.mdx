@@ -1,5 +1,5 @@
 ---
-title: "Server Event Logging with Pixel"
+title: "Logging"
 sidebarTitle: "Logging"
 description: "Track message edits, deletions, role changes, member joins, and voice events by setting up Pixel’s configurable log channel and event filters."
 ---
@@ -10,15 +10,15 @@ Pixel’s logging system records key server events in a dedicated channel so you
 
 Pick a channel where Pixel will post log entries:
 
-```text
+```js
 ,log set #mod-logs
 ```
 
 ## Choose which events to log
 
-Enable specific event categories with a comma-separated list:
+Setup specific event categories with a comma-separated list:
 
-```text
+```js
 ,log events message,role,member
 ```
 
@@ -28,7 +28,7 @@ You can add or remove categories anytime by re-running the command with the full
 
 If certain channels are too noisy for logs, exclude them:
 
-```text
+```js
 ,log ignore #spam-channel
 ```
 

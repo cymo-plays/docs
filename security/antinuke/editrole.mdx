@@ -1,5 +1,5 @@
 ---
-title: "Role editing"
+title: "Editrole"
 sidebarTitle: "Role editing"
 description: "Detect suspicious role permission changes with Pixel antinuke. Trigger a punishment when a member edits a role's dangerous permissions."
 ---
@@ -8,8 +8,8 @@ Pixel's antinuke role editing module watches for permission changes that could e
 
 ## Usage
 
-```text
-,antinuke editrole enable <punishment>
+```js
+,antinuke editrole setup <punishment>
 ,antinuke editrole disable
 ,antinuke editrole settings
 ```
@@ -22,8 +22,8 @@ Pixel's antinuke role editing module watches for permission changes that could e
 
 ## Example
 
-```text
-,antinuke editrole enable ban
+```js
+,antinuke editrole setup ban
 ```
 
 Any edit that adds a dangerous permission to a role results in an immediate ban for the offender.

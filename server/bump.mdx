@@ -1,17 +1,17 @@
 ---
-title: "Bump Reminders for Server Growth"
+title: "Bump"
 sidebarTitle: "Bump"
 description: "Configure Pixel bump reminders for Disboard and Disforge so your moderation team never misses a scheduled server bump."
 ---
 
-Pixel can remind your server when it is time to bump on Disboard or Disforge. This helps keep your server visible in listing directories without relying on someone to remember the schedule. This page covers how to enable reminders, set the reminder channel, and customize the message.
+Pixel can remind your server when it is time to bump on Disboard or Disforge. This helps keep your server visible in listing directories without relying on someone to remember the schedule. This page covers how to setup reminders, set the reminder channel, and customize the message.
 
-## Enable bump reminders
+## Setup bump reminders
 
 Turn on reminders for your server:
 
-```text
-,bumpreminder enable
+```js
+,bumpreminder setup
 ```
 
 Pixel will start watching for bump commands and notify you when the cooldown expires.
@@ -20,7 +20,7 @@ Pixel will start watching for bump commands and notify you when the cooldown exp
 
 Choose where Pixel should post bump reminders:
 
-```text
+```js
 ,bumpreminder channel #bump-reminders
 ```
 
@@ -30,7 +30,7 @@ Make sure the channel is visible to the members you want to handle bumps.
 
 Write a custom script that Pixel will post when the bump is ready:
 
-```text
+```js
 ,bumpreminder message @here It is time to bump the server! Use `!d bump` or `!disforge bump`.
 ```
 

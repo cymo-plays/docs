@@ -14,11 +14,11 @@ Reply automatically whenever a trigger phrase is used. The response accepts embe
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,autoresponder add (response)
 ```
 
-```bash Example
+```js Example
 ,autoresponder add rules → Read #rules please.
 ```
 
@@ -30,12 +30,12 @@ Restrict a trigger to specific roles or channels with `allow` and `deny`.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,autoresponder allow (trigger) (target)
 ,autoresponder deny (trigger) (target)
 ```
 
-```bash Example
+```js Example
 ,autoresponder allow rules #general
 ,autoresponder deny rules @Muted
 ```
@@ -48,7 +48,7 @@ View every allow and deny rule at once with `,autoresponder permissions`.
 
 List every responder, remove one, or clear them all.
 
-```bash
+```js
 ,autoresponder list
 ,autoresponder remove rules
 ,autoresponder clear
@@ -64,11 +64,11 @@ React automatically whenever a trigger word appears in a message.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,autoreact add (content)
 ```
 
-```bash Example
+```js Example
 ,autoreact add pog 🎉
 ```
 
@@ -82,11 +82,11 @@ Apply reactions to every message posted in a specific channel.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,autoreact channel add (channel) (reactions)
 ```
 
-```bash Example
+```js Example
 ,autoreact channel add #introductions 👋
 ```
 
@@ -102,11 +102,11 @@ Add a reaction to any existing message by ID.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,react (message) (emoji)
 ```
 
-```bash Example
+```js Example
 ,react 1234567890123456789 👀
 ```
 
@@ -120,11 +120,11 @@ Post an embed at a fixed interval, useful for rules reminders or event pings.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,timer add (channel) (interval) (code)
 ```
 
-```bash Example
+```js Example
 ,timer add #announcements 12h {embed}{description: Daily reminder!}
 ```
 

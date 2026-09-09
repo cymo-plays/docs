@@ -1,5 +1,5 @@
 ---
-title: "Configure Welcome and Leave Messages"
+title: "Messages"
 sidebarTitle: "Messages"
 description: "Set up welcome, leave, boost, and DM greeting messages in Pixel using custom scripts and embeds to greet members automatically."
 ---
@@ -10,7 +10,7 @@ Pixel can greet members, say goodbye, celebrate boosts, and send direct messages
 
 First, tell Pixel where to post welcome messages:
 
-```text
+```js
 ,welcome channel #general
 ```
 
@@ -22,7 +22,7 @@ Welcome scripts support plain text and embeds. Use `{user.mention}` to ping the 
 
 A basic embed welcome message looks like this:
 
-```text
+```js
 ,welcome message {embed}$v{title:Welcome to {guild.name}}{description:Hey {user.mention}, glad you joined us!}
 ```
 
@@ -32,14 +32,14 @@ The `{embed}$v` syntax tells Pixel to render the rest as an embed. You can add f
 
 Configure the other event types with similar commands:
 
-```text
+```js
 ,leave message Thanks for visiting, {user.mention}.
 ,boost message {user.mention} just boosted the server! Thank you!
 ```
 
 For DM greetings sent directly to new members:
 
-```text
+```js
 ,welcome dm true
 ,welcome dmmessage Hey {user.mention}, check out #rules when you get a chance.
 ```

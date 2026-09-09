@@ -10,12 +10,12 @@ All setup commands require the **manage server** permission.
 
 ## Configuring the starboard
 
-### Enabling the starboard
+### Setup the starboard
 
 Turn on the starboard for your server.
 
-```bash
-,starboard enable
+```js
+,starboard setup
 ```
 
 Disable it with `,starboard disable`.
@@ -26,11 +26,11 @@ Point starboard at the channel where reposts should appear.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,starboard channel (channel)
 ```
 
-```bash Example
+```js Example
 ,starboard channel #starboard
 ```
 
@@ -42,11 +42,11 @@ Choose the reaction emoji that qualifies a message.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,starboard emoji (emoji)
 ```
 
-```bash Example
+```js Example
 ,starboard emoji ⭐
 ```
 
@@ -58,11 +58,11 @@ Set the minimum number of reactions required to repost a message.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,starboard count (count)
 ```
 
-```bash Example
+```js Example
 ,starboard count 5
 ```
 
@@ -76,11 +76,11 @@ Prevent specific channels, roles, or users from qualifying for the starboard.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,starboard ignore add (target)
 ```
 
-```bash Example
+```js Example
 ,starboard ignore add #off-topic
 ```
 
@@ -94,7 +94,7 @@ Remove an entry with `,starboard ignore remove (target)`.
 
 Use `starboard config` to view the current setup, or `starboard reset` to wipe it.
 
-```bash
+```js
 ,starboard config
 ,starboard reset
 ```
@@ -107,15 +107,15 @@ Clownboard uses the same commands under the `,clownboard` prefix.
 
 <CodeGroup>
 
-```bash Syntax
-,clownboard enable
+```js Syntax
+,clownboard setup
 ,clownboard channel (channel)
 ,clownboard emoji (emoji)
 ,clownboard count (count)
 ```
 
-```bash Example
-,clownboard enable
+```js Example
+,clownboard setup
 ,clownboard channel #clownboard
 ,clownboard emoji 🤡
 ,clownboard count 3

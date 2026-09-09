@@ -16,11 +16,11 @@ All antiraid commands require the **administrator** permission.
 
 ## Configuring antiraid
 
-### Enabling antiraid on your server
+### Setup antiraid on your server
 
-Run the initial setup once. It creates the required configuration entry so modules can be enabled.
+Run the initial setup once. It creates the required configuration entry so modules can be setup.
 
-```bash
+```js
 ,antiraid setup
 ```
 
@@ -30,11 +30,11 @@ Send every antiraid event to a dedicated channel so you can audit later.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,antiraid logs (channel)
 ```
 
-```bash Example
+```js Example
 ,antiraid logs #antiraid-logs
 ```
 
@@ -46,11 +46,11 @@ Create a one-time bypass for a user you know is about to join.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,antiraid whitelist (user)
 ```
 
-```bash Example
+```js Example
 ,antiraid whitelist @jonathan
 ```
 
@@ -66,19 +66,19 @@ Trigger a punishment when too many members join in a short window.
 
 <CodeGroup>
 
-```bash Syntax
-,antiraid massjoin enable (punishment) (threshold)
+```js Syntax
+,antiraid massjoin setup (punishment) (threshold)
 ```
 
-```bash Example
-,antiraid massjoin enable ban 5
+```js Example
+,antiraid massjoin setup ban 5
 ```
 
 </CodeGroup>
 
 You can also change the threshold or punishment later without disabling the module.
 
-```bash
+```js
 ,antiraid massjoin threshold 10
 ,antiraid massjoin punishment kick
 ```
@@ -89,12 +89,12 @@ Punish accounts younger than the configured age when they join.
 
 <CodeGroup>
 
-```bash Syntax
-,antiraid age enable (time) (punishment)
+```js Syntax
+,antiraid age setup (time) (punishment)
 ```
 
-```bash Example
-,antiraid age enable 7d ban
+```js Example
+,antiraid age setup 7d ban
 ```
 
 </CodeGroup>
@@ -105,12 +105,12 @@ Punish accounts still using Discord's default avatar.
 
 <CodeGroup>
 
-```bash Syntax
-,antiraid avatar enable (punishment)
+```js Syntax
+,antiraid avatar setup (punishment)
 ```
 
-```bash Example
-,antiraid avatar enable kick
+```js Example
+,antiraid avatar setup kick
 ```
 
 </CodeGroup>
@@ -123,11 +123,11 @@ Every module has a matching `disable` subcommand.
 
 <CodeGroup>
 
-```bash Syntax
+```js Syntax
 ,antiraid (module) disable
 ```
 
-```bash Example
+```js Example
 ,antiraid massjoin disable
 ```
 
@@ -137,14 +137,14 @@ Every module has a matching `disable` subcommand.
 
 ## Viewing the antiraid configuration
 
-Use `antiraid config` to see enabled modules and their settings.
+Use `antiraid config` to see setup modules and their settings.
 
-```bash
+```js
 ,antiraid config
 ```
 
 Use `antiraid whitelisted` to see every active whitelist entry.
 
-```bash
+```js
 ,antiraid whitelisted
 ```

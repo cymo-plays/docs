@@ -4,11 +4,11 @@ sidebarTitle: "Antinuke"
 description: "Set up Pixel's antinuke to catch mass bans, kicks, channel and role changes. Configure per-user thresholds, whitelists, admins, and log channels."
 ---
 
-Pixel's antinuke module locks down destructive actions before a compromised or rogue moderator can wreck your server. This page covers how to enable antinuke, tune its thresholds and punishments, whitelist trusted staff, and review incidents in a log channel.
+Pixel's antinuke module locks down destructive actions before a compromised or rogue moderator can wreck your server. This page covers how to setup antinuke, tune its thresholds and punishments, whitelist trusted staff, and review incidents in a log channel.
 
 ## Information
 
-To start using antinuke, run `,antinuke setup` once. This creates the base configuration so individual modules can be enabled.
+To start using antinuke, run `,antinuke setup` once. This creates the base configuration so individual modules can be setup.
 
 Antinuke is triggered by a threshold set **per user**. When a member performs a watched action more times than the threshold within Pixel's tracking window, the configured punishment fires.
 
@@ -46,21 +46,21 @@ Set a log channel with `,antinuke logs [channel]`. Every antinuke trigger sends 
 
 If you are not sure how to configure antinuke, this is a solid starting point.
 
-```text
+```js
 // Role config
-,antinuke rolecreate enable 3 strip
-,antinuke roledelete enable 1 strip
-,antinuke editrole enable ban
-,antinuke giverole enable strip
+,antinuke rolecreate setup 3 strip
+,antinuke roledelete setup 1 strip
+,antinuke editrole setup ban
+,antinuke giverole setup strip
 
 // Channel config
-,antinuke channelcreate enable 3 strip
-,antinuke channeldelete enable 1 strip
+,antinuke channelcreate setup 3 strip
+,antinuke channeldelete setup 1 strip
 
 // Role moderation
-,antinuke kick enable 3 kick
-,antinuke ban enable 3 kick
-,antinuke botadd enable strip
+,antinuke kick setup 3 kick
+,antinuke ban setup 3 kick
+,antinuke botadd setup strip
 ```
 
 ## Modules

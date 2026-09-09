@@ -1,5 +1,5 @@
 ---
-title: "Role creation"
+title: "Rolecreate"
 sidebarTitle: "Role creation"
 description: "Configure Pixel's antinuke role creation module to catch mass role spam. Set thresholds, punishments, and stop abuse before it clutters your server."
 ---
@@ -8,8 +8,8 @@ Pixel's antinuke role creation module watches for members creating too many role
 
 ## Usage
 
-```text
-,antinuke rolecreate enable <threshold> <punishment>
+```js
+,antinuke rolecreate setup <threshold> <punishment>
 ,antinuke rolecreate disable
 ,antinuke rolecreate settings
 ```
@@ -23,8 +23,8 @@ Pixel's antinuke role creation module watches for members creating too many role
 
 ## Example
 
-```text
-,antinuke rolecreate enable 3 strip
+```js
+,antinuke rolecreate setup 3 strip
 ```
 
 This lets a user create up to 3 roles. On the 4th creation, Pixel strips their dangerous permissions.

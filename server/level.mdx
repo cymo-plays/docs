@@ -1,20 +1,20 @@
 ---
-title: "Leveling and XP Rewards"
+title: "Level"
 sidebarTitle: "Level"
-description: "Enable Pixel’s leveling system to award XP for chat and voice activity, set level-up role rewards, and display leaderboards."
+description: "Setup Pixel’s leveling system to award XP for chat and voice activity, set level-up role rewards, and display leaderboards."
 ---
 
-Pixel’s leveling system tracks member activity in text and voice channels, awards XP, and grants roles when members reach specific levels. This page covers how to enable the system, set rewards, and check progress.
+Pixel’s leveling system tracks member activity in text and voice channels, awards XP, and grants roles when members reach specific levels. This page covers how to setup the system, set rewards, and check progress.
 
-## Enable leveling
+## Setup leveling
 
 Turn on the leveling system for your server:
 
-```text
-,level enable
+```js
+,level setup
 ```
 
-Once enabled, Pixel starts tracking XP for all members.
+Once setup, Pixel starts tracking XP for all members.
 
 ## How XP is earned
 
@@ -28,7 +28,7 @@ Server boosters can earn XP at a faster rate. Pixel applies a configurable multi
 
 Assign roles automatically when members hit specific levels:
 
-```text
+```js
 ,level reward add 5 @Member+
 ,level reward add 10 @Regular
 ,level reward add 25 @Veteran
@@ -40,13 +40,13 @@ Members will receive the role the next time they earn XP after crossing the thre
 
 View your own or another member’s rank card:
 
-```text
+```js
 ,rank @user
 ```
 
 Display the server leaderboard:
 
-```text
+```js
 ,leaderboard
 ```
 
