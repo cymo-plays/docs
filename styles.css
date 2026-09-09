@@ -1,0 +1,21 @@
+/* Pixel Dark Background */
+:root, html, body {
+  background-color: #070709 !important;
+}
+
+/* Rounded Logo with subtle border (matches website header) */
+header img,
+nav img,
+a[href*="pixelbot"] img {
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  object-fit: cover !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+/* Website Amber Text Selection */
+::selection {
+  background-color: #d49b43 !important;
+  color: #000000 !important;
+}
