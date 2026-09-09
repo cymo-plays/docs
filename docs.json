@@ -1,70 +1,156 @@
 {
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
   "name": "Pixel",
-  "logo": {
-    "dark": "/logo/dark.png",
-    "light": "/logo/light.png",
-    "href": "https://yourwebsite.com"
-  },
-  "favicon": "/favicon.gif",
   "colors": {
-    "primary": "#684f2b",
-    "light": "#ac721a",
-    "dark": "#675130",
+    "primary": "#d49b43",
+    "light": "#f0c78a",
+    "dark": "#d49b43",
     "background": {
       "dark": "#070709",
       "light": "#fafafa"
     }
   },
-  "topbarLinks": [
-    {
-      "name": "Commands",
-      "url": "https://yourwebsite.com/commands"
-    },
-    {
-      "name": "Support Server",
-      "url": "https://discord.gg/8RE32XrqBT"
-    }
-  ],
-  "topbarCtaButton": {
-    "name": "Invite Pixel",
-    "url": "https://discord.com/oauth2/authorize?client_id=YOUR_ID..."
+  "favicon": "/favicon.svg",
+  "logo": {
+    "dark": "/logo/dark.png",
+    "light": "/logo/light.png",
+    "href": "https://pixelbot.mintlify.app"
   },
-  "tabs": [
-    {
-      "name": "Documentation",
-      "url": "introduction"
-    },
-    {
-      "name": "API Reference",
-      "url": "api-reference"
+  "navbar": {
+    "links": [
+      {
+        "label": "Commands",
+        "href": "https://pixelbot.mintlify.app/resources/syntax"
+      },
+      {
+        "label": "Support",
+        "href": "https://discord.gg/8RE32XrqBT"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Invite Pixel",
+      "href": "https://discord.com/oauth2/authorize?client_id=1523030320708845608&scope=bot+applications.commands&permissions=8"
     }
-  ],
-  "navigation": [
-    {
-      "group": "Getting Started",
-      "pages": [
-        "introduction",
-        "quickstart",
-        "permissions"
-      ]
-    },
-    {
-      "group": "Modules",
-      "pages": [
-        "modules/voicemaster",
-        "modules/antinuke",
-        "modules/logging",
-        "modules/tickets",
-        "modules/music"
-      ]
-    }
-  ],
-  "footerSocials": {
-    "discord": "https://discord.gg/8RE32XrqBT"
   },
-  "background": {
-    "color": {
-      "light": "#fffefe"
+  "navigation": {
+    "pages": [
+      {
+        "group": "Getting Started",
+        "pages": [
+          "index",
+          "quickstart"
+        ]
+      }
+    ],
+    "groups": [
+      {
+        "group": "Overview",
+        "pages": [
+          "introduction"
+        ]
+      },
+      {
+        "group": "Security Setup",
+        "pages": [
+          {
+            "group": "Antinuke",
+            "pages": [
+              "security/antinuke",
+              "security/antinuke/rolecreate",
+              "security/antinuke/roledelete",
+              "security/antinuke/editrole",
+              "security/antinuke/role-giving",
+              "security/antinuke/rolelock",
+              "security/antinuke/channelcreate",
+              "security/antinuke/channeldelete",
+              "security/antinuke/kick",
+              "security/antinuke/ban",
+              "security/antinuke/botadd"
+            ]
+          },
+          "security/join-gate",
+          "security/moderation",
+          "security/fake-permissions",
+          "security/auto-moderation"
+        ]
+      },
+      {
+        "group": "Server Configuration",
+        "pages": [
+          "server/roles",
+          "server/messages",
+          "server/logging",
+          "server/starboard",
+          "server/voicemaster",
+          "server/level",
+          "server/bump",
+          "server/reaction",
+          "server/aliases"
+        ]
+      },
+      {
+        "group": "Economy",
+        "pages": [
+          "economy/general",
+          "economy/business",
+          "economy/laboratory",
+          "economy/company",
+          "economy/cards",
+          "economy/games"
+        ]
+      },
+      {
+        "group": "Integrations",
+        "pages": [
+          "integrations/lastfm",
+          "integrations/social-notifications"
+        ]
+      },
+      {
+        "group": "Miscellaneous",
+        "pages": [
+          "miscellaneous/music",
+          "miscellaneous/tickets",
+          "miscellaneous/counters",
+          "miscellaneous/webhook",
+          "miscellaneous/giveaway",
+          "miscellaneous/invite-tracker"
+        ]
+      },
+      {
+        "group": "Resources & Scripting",
+        "pages": [
+          "resources/syntax",
+          "resources/scripting/embeds",
+          "resources/scripting/variables",
+          "resources/scripting/pagination",
+          "resources/permissions",
+          "resources/punishments"
+        ]
+      },
+      {
+        "group": "Common Issues",
+        "pages": [
+          "common-issues/ios-dash",
+          "common-issues/server-removal"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "discord": "https://discord.gg/8RE32XrqBT",
+      "github": "https://github.com/cymo-plays/docs"
     }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude"
+    ]
   }
 }
