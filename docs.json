@@ -3,21 +3,21 @@
   "theme": "mint",
   "name": "Pixel",
   "colors": {
-    "primary": "#d49b43",
-    "light": "#f0c78a",
-    "dark": "#d49b43"
+    "primary": "#658a95",
+    "light": "#95b6bd",
+    "dark": "#4a6e7a"
   },
   "favicon": "/favicon.svg",
   "logo": {
-    "dark": "/logo/dark.png",
-    "light": "/logo/light.png",
-    "href": "https://pixelbot.mintlify.app"
+    "dark": "https://pixelbot.site.je/avatar.gif",
+    "light": "https://pixelbot.site.je/avatar.gif",
+    "href": "https://pixelbot.site.je"
   },
   "navbar": {
     "links": [
       {
         "label": "Commands",
-        "href": "https://pixelbot.mintlify.app/resources/syntax"
+        "href": "https://pixelbot.site.je/commands"
       },
       {
         "label": "Support",
