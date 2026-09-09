@@ -14,6 +14,16 @@ a[href*="pixelbot"] img {
   height: 32px !important;
 }
 
+/* Hide AI Assistant, "Ask a question", and contextual menus */
+[data-component="assistant"],
+[aria-label*="Ask"],
+[aria-label*="Assistant"],
+.assistant-trigger,
+#assistant-trigger,
+.contextual-menu {
+  display: none !important;
+}
+
 /* Website Amber Text Selection */
 ::selection {
   background-color: #d49b43 !important;
